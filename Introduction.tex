@@ -57,13 +57,13 @@ molecules with improved properties \cite{Xue_2016,Negoescu_2011,De_Grave_2008}. 
 works are hampered by several limitations. First, the proposed methods are only
 applied in the small-data regime, with measurements collected for at most one
 thousand molecules---while current high-throughput studies can collect data for
-millions of molecules. The reason for these works using small amounts of data is that they
+millions of molecules. The reason for using small amounts of data is that these works
 use Gaussian processes (GPs) \cite{rasmussen2006gaussian} for making predictions. GPs
-produce accurate estimates of uncertainty in their predictions and are therefore
-are good at exploration during the data collection process.
+produce very accurate estimates of uncertainty in their predictions and are therefore 
+good at exploration during the data collection process.
 However, they also have a high computational
-cost. GPs can be scaled up by resorting to approximations based on inducing inputs 
-\cite{snelson2005sparse,hensman2015scalable}. However, the resulting methods are
+cost. While GPs can be scaled up by resorting to approximations based on inducing inputs 
+\cite{snelson2005sparse,hensman2015scalable}, the resulting methods are
 statistically inefficient in the large-data regime because they cannot learn
 feature representations for the data \cite{bengio2007scaling}.
 Neural networks do not have these disadvantages. They are highly scalable and,
@@ -78,11 +78,14 @@ and accurate estimates of uncertainty in the predictions of Bayesian neural netw
 When using adaptive design methods in large scale problems, it is often necessary to collect measurements in 
 parallel to speed up the whole process, e.g. by running simulations in a computer cluster or by performing
 multiple experiments in a laboratory at the same time. Ideally, the batches with the molecules to be analyzed next
-should be generated also in parallel to avoid any computational bottlenecks that can significantly slow down the data collection process. To achieve this, we use the method Thompson sampling \cite{thompson_likelihood_1933}, which can be easily implemented
-in a parallel and distributed fashion. This allows us to collect large batches of molecules in a computationally efficient manner.
+should be generated also in parallel to avoid any computational bottlenecks that can significantly slow down the data collection process. To achieve this, we generate our batches of molecules using the method Thompson sampling 
+\cite{thompson_likelihood_1933}, which can be easily implemented in a parallel and distributed fashion. 
+This allows us to collect large batches of molecules in a computationally efficient manner.
 
-We begin with a brief description of Bayesian neural networks,
+The rest of the paper is organized as follows. We begin with a brief description of Bayesian neural networks and of
+the active learning techniques that we have used for intelligently searching chemical space. We then describe the 
+three libraries which we have used to illustrated the advantages of using adaptive design methods with Bayesian neural networks.
 
-and the active learning techniques we have used for intelligently searching chemical  space.  We will then describe the three libraries which we have used to demonstrate the advantages of using intelligent searching techniques through an analysis of the diversity measured using a neural network.  We will then  discuss the results of both active learning techniques when applied to these data sets, illustrating the power of searching in an intelligent manner.
+through an analysis of the diversity measured using a neural network.  We will then  discuss the results of both active learning techniques when applied to these data sets, illustrating the power of searching in an intelligent manner.
 
 This is a test
