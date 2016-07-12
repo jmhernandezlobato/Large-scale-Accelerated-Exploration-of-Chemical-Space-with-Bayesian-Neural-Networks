@@ -1,3 +1,3 @@
 abstract.tex
 Introduction.tex
-section_Methods__.tex
+section_Methods_Any_intelligent_method__.tex
