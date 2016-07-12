@@ -78,8 +78,7 @@ and accurate estimates of uncertainty in the predictions of Bayesian neural netw
 When using adaptive design methods in large scale problems, it is often necessary to collect measurements in 
 parallel to speed up the data collection process, e.g. by running simulations in a computer cluster or by performing
 experiments in a laboratory with several available machines. Ideally, the batches with the molecules to be analyzed next
-should be generated also in parallel to avoid computational bottlenecks that can significantly slow down the data collection process. To achieve this, we generate our batches of molecules using the method Thompson sampling 
-\cite{thompson_likelihood_1933}, which can be easily implemented in a parallel and distributed fashion. 
+should be generated also in parallel to avoid computational bottlenecks that can significantly slow down the data collection process. To achieve this, we generate our batches of molecules using the method Thompson sampling \cite{Thompson_1933}, which can be easily implemented in a parallel and distributed fashion. 
 This allows us to collect large batches of molecules in a computationally efficient manner.
 
 The rest of the paper is organized as follows. We begin with a brief description of Bayesian neural networks. We then introduce the probabilistic active learning techniques that we use for sequential adaptive design: Thompson sampling and maximum entropy sampling. After this, we describe three libraries of compounds that we use to illustrate the advantages of our adaptive design methods. Finally, we show the experimental results obtained and discuss the advantages and limitations of the proposed methods.
