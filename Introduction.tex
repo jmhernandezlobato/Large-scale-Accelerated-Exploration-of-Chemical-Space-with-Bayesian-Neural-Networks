@@ -76,16 +76,10 @@ In particular, we use the method probabilistic back-propagation \cite{Hernandez-
 and accurate estimates of uncertainty in the predictions of Bayesian neural networks.
 
 When using adaptive design methods in large scale problems, it is often necessary to collect measurements in 
-parallel to speed up the whole process, e.g. by running simulations in a computer cluster or by performing
-multiple experiments in a laboratory at the same time. Ideally, the batches with the molecules to be analyzed next
-should be generated also in parallel to avoid any computational bottlenecks that can significantly slow down the data collection process. To achieve this, we generate our batches of molecules using the method Thompson sampling 
+parallel to speed up the data collection process, e.g. by running simulations in a computer cluster or by performing
+experiments in a laboratory with several available machines. Ideally, the batches with the molecules to be analyzed next
+should be generated also in parallel to avoid computational bottlenecks that can significantly slow down the data collection process. To achieve this, we generate our batches of molecules using the method Thompson sampling 
 \cite{thompson_likelihood_1933}, which can be easily implemented in a parallel and distributed fashion. 
 This allows us to collect large batches of molecules in a computationally efficient manner.
 
-The rest of the paper is organized as follows. We begin with a brief description of Bayesian neural networks and of
-the active learning techniques that we have used for intelligently searching chemical space. We then describe the 
-three libraries which we have used to illustrated the advantages of using adaptive design methods with Bayesian neural networks.
-
-through an analysis of the diversity measured using a neural network.  We will then  discuss the results of both active learning techniques when applied to these data sets, illustrating the power of searching in an intelligent manner.
-
-This is a test
+The rest of the paper is organized as follows. We begin with a brief description of Bayesian neural networks. We then introduce the probabilistic active learning techniques that we use for sequential adaptive design: Thompson sampling and maximum entropy sampling. After this, we describe three libraries of compounds that we use to illustrate the advantages of our adaptive design methods. Finally, we show the experimental results obtained and discuss the advantages and limitations of the proposed methods.
