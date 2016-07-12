@@ -79,7 +79,7 @@ and accurate estimates of uncertainty in the predictions of Bayesian neural netw
 Note that the discovery of new relevant compounds may require to collect massive amounts of data.
 In this case, the data collection process can be accelerated by using parallelization.
 For example, by running parallel simulations in a computer cluster or by performing simultaneous experiments in a laboratory.
-To achieve this, the adaptive design method has to produce at each iteration a batch of molecules to be
+To achieve this the adaptive design method has to produce at each iteration a batch of molecules to be
 analyzed next simultaneously. Ideally, these batches of molecules should also be generated in parallel to avoid computational bottlenecks. To achieve this, we generate our batches of molecules using the Thompson sampling heuristic \cite{Thompson_1933},
 which can be easily implemented in a parallel and distributed fashion. This allows us to collect large
 batches of molecules in a computationally efficient manner. While Thompson sampling allows us to speed up
