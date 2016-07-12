@@ -70,10 +70,28 @@ Neural networks do not have these disadvantages. They are highly scalable and,
 by using adaptive basis functions, they can make very accurate predictions with
 large amounts of data \cite{lecun2015deep}. Until very recently, it was very
 challenging to obtain accurate estimates of uncertainty in the predictions of very large
-neural networks that were trained on very large datasets. However, in this work we exploit
+neural networks trained on very large datasets. However, in this work we exploit
 recent advances in approximate inference with Bayesian neural networks to overcome this difficulty. 
+In particular, we use the method probabilistic back-propagation \cite{Hernandez-Lobato15b} to obtain fast
+and accurate estimates of uncertainty in the predictions of Bayesian neural networks.
 
-We use the method probabilistic back-propagation \cite{Hernandez-Lobato15b} to obtain fast and accurate estimates of uncertainty in the predictions of neural networks.
+When using adaptive design methods in large scale problems it is important to collect measurements in large
+batches of data. Ideally, the evaluation locations for these batches should be generated in a distributed 
+manner to avoid bottlenecks that 
+
+
+However, popular adaptive design tools based on the expected improvement heuristic \cite{jones1998efficient,Xue_2016}
+do not allow each of the 
+
+However, 
+
+large batches in parallel.
+
+avoid bottle necks
+that can 
+
+
+To collect large batches of data in parallel we then use the method Thompson sampling \cite{thompson_likelihood_1933}.
 
 We beging with a brief description of Bayesian neural networks,
 
