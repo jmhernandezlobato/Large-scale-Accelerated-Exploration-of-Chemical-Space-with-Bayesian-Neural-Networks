@@ -79,7 +79,7 @@ The discovery of new relevant compounds may require adaptive design methods to c
 In this case, the data collection process can be further accelerated by performing it in parallel.
 For example, by running multiple parallel simulations a computer cluster or by performing
 multiple simultaneous experiments in a laboratory.
-In this parallel evaluation setting, the adaptive design method produces at each iteration a batch of molecules to be analyzed simultaneously. Ideally, these batches of molecules should also be generated in a parallel way to avoid computational bottlenecks. To achieve this, we generate our batches of molecules using the method Thompson sampling \cite{Thompson_1933}, which can be easily implemented in a parallel and distributed fashion. This allows us to collect large batches of molecules in a
+In the parallel evaluation setting, the adaptive design method produces at each iteration a batch of molecules to be analyzed simultaneously. Ideally, these batches of molecules should also be generated in a parallel way to avoid computational bottlenecks. To achieve this, we generate our batches of molecules using the method Thompson sampling \cite{Thompson_1933}, which can be easily implemented in a parallel and distributed fashion. This allows us to collect large batches of molecules in a
 computationally efficient manner. While Thompson sampling allows us to speed up the finding of new molecules with optimal 
 properties, we may also be interested in 
 
