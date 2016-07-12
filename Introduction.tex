@@ -77,7 +77,7 @@ In particular, we use the method probabilistic back-propagation \cite{Hernandez-
 and accurate estimates of uncertainty in the predictions of Bayesian neural networks.
 
 Note that the discovery of new relevant compounds may require to collect massive amounts of data.
-In this case, the data collection process can be further accelerated by performing it in parallel.
+In this case, the data collection process can be accelerated by using parallelization.
 For example, by running parallel simulations in a computer cluster or by performing simultaneous experiments in a laboratory.
 In the parallel evaluation setting, the adaptive design method produces at each iteration a batch of molecules to be
 analyzed next simultaneously. Ideally, these batches of molecules should also be generated in parallel to avoid computational bottlenecks. To achieve this, we generate our batches of molecules using the Thompson sampling heuristic \cite{Thompson_1933},
