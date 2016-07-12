@@ -62,15 +62,15 @@ use Gaussian processes (GPs) \cite{rasmussen2006gaussian} for making predictions
 produce accurate estimates of uncertainty in their predictions and are therefore
 are good at exploration during the data collection process.
 However, they also have a high computational
-cost. GPs can be scaled up by using approximations based on inducing inputs 
-\cite{snelson2005sparse,hensman2015scalable}. However, these methods become
+cost. GPs can be scaled up by resorting to approximations based on inducing inputs 
+\cite{snelson2005sparse,hensman2015scalable}. However, the resulting methods are
 statistically inefficient in the large-data regime because they cannot learn
 feature representations for the data \cite{bengio2007scaling}.
 Neural networks do not have these disadvantages. They are highly scalable and,
 by using adaptive basis functions, they can make very accurate predictions with
-large amounts of data \cite{lecun2015deep}. However, until very recently, it was very
+large amounts of data \cite{lecun2015deep}. Until very recently, it was very
 challenging to obtain accurate estimates of uncertainty in the predictions of very large
-neural networks when these where trained on very large datasets. In this work we exploit
-recent advances in approximate inference with Bayesian neural networks to
+neural networks that were trained on very large datasets. However, in this work we exploit
+recent advances in approximate inference with Bayesian neural networks to overcome this difficulty.
 
 This is a test
