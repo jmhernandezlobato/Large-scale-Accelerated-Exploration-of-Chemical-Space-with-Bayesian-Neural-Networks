@@ -75,23 +75,13 @@ recent advances in approximate inference with Bayesian neural networks to overco
 In particular, we use the method probabilistic back-propagation \cite{Hernandez-Lobato15b} to obtain fast
 and accurate estimates of uncertainty in the predictions of Bayesian neural networks.
 
-When using adaptive design methods in large scale problems it is very often necessary to collect measurements in 
-parallel, using large batches of molecules that will be analyzed next. Ideally, these batches should be
-generated also in parallel to avoid any computational bottlenecks that can significantly slow down the data collection process. 
-For this purpose, we use the method Thompson sampling \cite{thompson_likelihood_1933}, which can be easily implemented
-in a parallel and distributed fashion. 
+When using adaptive design methods in large scale problems, it is often necessary to collect measurements in 
+parallel to speed up the whole process, e.g. by running simulations in a computer cluster or by performing
+multiple experiments in a laboratory at the same time. Ideally, the batches with the molecules to be analyzed next
+should be generated also in parallel to avoid any computational bottlenecks that can significantly slow down the data collection process. To achieve this, we use the method Thompson sampling \cite{thompson_likelihood_1933}, which can be easily implemented
+in a parallel and distributed fashion. This allows us to collect large batches of molecules in a computationally efficient manner.
 
-However, 
-
-large batches in parallel.
-
-avoid bottle necks
-that can 
-
-
-To collect large batches of data in parallel we then use the method Thompson sampling \cite{thompson_likelihood_1933}.
-
-We beging with a brief description of Bayesian neural networks,
+We begin with a brief description of Bayesian neural networks,
 
 and the active learning techniques we have used for intelligently searching chemical  space.  We will then describe the three libraries which we have used to demonstrate the advantages of using intelligent searching techniques through an analysis of the diversity measured using a neural network.  We will then  discuss the results of both active learning techniques when applied to these data sets, illustrating the power of searching in an intelligent manner.
 
