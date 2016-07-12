@@ -78,7 +78,7 @@ and accurate estimates of uncertainty in the predictions of Bayesian neural netw
 Adaptive design methods may have to collect data in parallel when addressing large scale problems. 
 For example, by running multiple simulations in parallel in a computer
 cluster or by performing multiple experiments at the same time in a laboratory. 
-In this setting, the adaptive design method produces at each iteration a batch of molecules to be analyzed next in parallel.
+In this setting the adaptive design method produces at each iteration a batch of molecules to be analyzed next.
 Ideally, these batches should be generated also in parallel to avoid computational bottlenecks. To achieve this, we generate our batches of molecules using the method Thompson sampling \cite{Thompson_1933}, which
 can be easily implemented in a parallel and distributed fashion. This allows us to collect large batches of molecules in a
 computationally efficient manner. While Thompson sampling allows us to speed up the finding of new molecules with optimal 
