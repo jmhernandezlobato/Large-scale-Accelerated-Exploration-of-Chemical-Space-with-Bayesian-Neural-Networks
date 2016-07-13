@@ -1,4 +1,5 @@
 abstract.tex
 Introduction.tex
 section_Methods_Any_intelligent_method__.tex
+figures/pbp/pbp.svg
 subsection_Bayesian_Neural_Networks_When__.tex
