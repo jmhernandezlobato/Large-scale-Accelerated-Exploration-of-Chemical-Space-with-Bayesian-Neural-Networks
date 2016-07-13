@@ -64,7 +64,7 @@ produce very accurate estimates of uncertainty in their predictions and are ther
 good at exploration during the data collection process.
 However, they also have a high computational cost and can only be applied to small datasets. While GPs can be scaled up by resorting to approximations 
 \cite{snelson2005sparse,hensman2015scalable}, the resulting methods are
-statistically inefficient in the large-data regime because GPs cannot learn
+statistically inefficient in the large-data regime. The reason for this is that GPs cannot learn
 feature representations for the data \cite{bengio2007scaling}.
 Neural networks do not have these disadvantages: they are highly scalable and,
 by using adaptive basis functions, they can make very accurate predictions with
