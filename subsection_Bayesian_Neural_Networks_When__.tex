@@ -1,0 +1,59 @@
+\subsection{Bayesian Neural Networks}
+
+When implementing an intelligent search, it is desirable to utilize a predictive method as a fast approximation to either an expensive calculation, or an experimentally observed value.  Additionally, since the goal is the large scale exploration of chemical space, the method must also possess good scaling characteristics.  In this regard, neural networks provide an ideal solution.  Neural networks are known to produce state-of-the-art results for predicting chemical properties \cite{ma2015deep,unterthiner2015toxicity,ramsundar2015massively}, and they can also be applied to large datasets by using stochastic optimization techniques \cite{bousquet2008tradeoffs}. 
+
+In order to balance exploration and exploitation, it is desirable to utilize a probablistic prediction paradigm, rather than the more common deterministic prediction.  Making probabilistic predictions with neural networks is traditionally a difficult task; we make use of a recent breakthrough in the scalable training of Bayesian neural networks developed by some of the authors \cite{hernandez2015probabilistic}, known as probablistic back propagation (PBP). 
+
+In a neural network with~$L$ layers, where~$V_l$ is the number of hidden units in layer~$l$, and~${\mathcal{W} = \{ \mathbf{W}_l \}_{l=1}^L}$ is the collection of~${V_l\times (V_{l-1}+1)}$ weight matrices between fully-connected layers. The $+1$ is introduced to account for the additional per-layer biases. We denote the outputs of the layers by vectors~$\{ \mathbf{z}_l \}_{l=0}^{L}$, where~$\mathbf{z}_0$ is the input layer,~${\{\mathbf{z}_l\}_{l=1}^{L-1}}$ are the hidden units and~$\mathbf{z}_L$ denotes the output layer, which is one-dimensional since the target variables $y_n$ are scalars.  
+The input to the $l$-th layer is defined as~${\mathbf{a}_l = \mathbf{W}_l \mathbf{z}_{l-1} / \sqrt{V_{l-1}+1} }$,
+where the factor~${1/\sqrt{V_{l-1} + 1}}$ keeps the scale of the input to each neuron independent
+of the number of incoming connections.
+The activation functions for each hidden layer are rectified linear units (ReLUs)
+\cite{nair2010rectified}, i.e.,~${a(x) = \max(x,0)}$.
+Let $\gamma$ be the precision of the Gaussian noise in the target variables and let $\lambda$
+be the precision of the zero-mean isotropic Gaussian prior on the network weights.
+PBP approximates the posterior distribution on $\mathcal{W}$, $\gamma$ and $\lambda$ with
+the tractable distribution
+\begin{multline}
+q(\mathcal{W},\gamma, \lambda) = \textstyle \left[ \prod_{l=1}^L\! \prod_{i=1}^{V_l}\! 
+\prod_{j=1}^{V_{l\!-\!1}\!+\!1} \mathcal{N}(w_{ij,l}| m_{ij,l},v_{ij,l})\right ]
+\\ \DistGam(\gamma\given \alpha^\gamma, \beta^\gamma)
+\DistGam(\lambda\given \alpha^\lambda, \beta^\lambda)\,.\label{eq:posterior_approximation}
+\end{multline}
+PBP tunes the parameters of $q$ by iterating an assumed
+density filtering (ADF) algorithm over the training data \cite{opper1998bayesian}. The main operation in PBP
+is the update of the mean and variance parameters of (\ref{eq:posterior_approximation})
+each time a new data point is processed. 
+
+\begin{figure}[hb]
+\centering
+\includegraphics[width=0.8\columnwidth]{figures/pbp.png}
+
+\caption{A graphical representation of the probabalistic back propagation (PBP) algorithm. Deterministic inputs, here represented as $1$s and $0$s are passed through the Bayesian neural network. The main operation in PBP is the update of the mean and variance parameters of the posterior approximation each time a new data point is processed. Updates are propagated using moment matching between the old and new liklihoods, with ADF Gaussian updates.}
+\label{fig:pbp}
+\end{figure} 
+For this, PBP matches moments between
+the new $q$ and the product of the old $q$ and the likelihood factor
+$\mathcal{N}(y_n\given f(\mathbf{x}_n;\mathcal{W}),\gamma^{-1})$,
+where $f(\mathbf{x}_n;\mathcal{W})$ denotes the output of the network for input $\mathbf{x}_n$ and weight values $\mathcal{W}$.
+The matching of moments for the weights is achieved by using standard ADF Gaussian updates (see
+\cite{minka2001family}, equations 5.12 and 5.1):
+\begin{align}
+m_{ij,l}^\text{new} & = m_{ij,l} + v_{ij,l} \nabla_{m_{ij,l}} \log Z \,,\label{eq:adf_update_1}\\
+v_{ij,l}^\text{new} & = v_{ij,l} - v_{ij,l}^2 \left[ (\nabla_{m_{ij,l}} \log Z)^2 - 2 \nabla_{v_{ij,l}} \log Z \right]\,,\label{eq:adf_update_2}
+\end{align}
+where $Z$ is the result of marginalizing the likelihood $\mathcal{N}(y_n\given f(\mathbf{x}_n;\mathcal{W}),\gamma^{-1})$ with
+respect to $q$. The computation of $Z$ is intractable. However, PBP circumvents this problem by
+approximating the distribution of the network output $f(\mathbf{x}_n;\mathcal{W})$ when $\mathcal{W} \sim q$ with a Gaussian. 
+This is achieved in a forward pass through the network where each non-Gaussian distribuion
+for the output of each neural unit is approximated with a Gaussian by moment matching.
+When $\gamma\sim q$, the marginalization of $\mathcal{N}(y_n\given f(\mathbf{x}_n;\mathcal{W}),\gamma^{-1})$ 
+with respect to $\gamma$ produces a Student's $t$ density which does not
+convolve in closed form with respect to the Gaussian approximation on $f(\mathbf{x}_n;\mathcal{W})$. Neverheless, this Student's
+$t$ density can be as well approximated with a Gaussian by moment matching to obtain a closed form convolution that approximates $Z$.
+The gradients required in (\ref{eq:adf_update_1}) and (\ref{eq:adf_update_2}) can then be obtained by backpropagation.
+After several ADF iterations over the data,  we can obtain a probabilistic
+prediction for $f(\mathbf{x}_\star;\mathcal{W})$ given the test input
+$\mathbf{x}_\star$ by applying the forward pass process described above.  We
+refer the reader to \cite{hernandez2015probabilistic} for full details on PBP; a graphical depiction of the process of training a Bayesian neural network using PBP is shown in Figure \ref{fig:pbp}.
+
