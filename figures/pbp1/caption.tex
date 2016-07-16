@@ -1,1 +1,11 @@
-A graphical representation of the probabilistic back propagation (PBP) algorithm. Deterministic inputs are represented as $1$'s and $0$'s at the input layer. These are passed forward through the Bayesian neural network. Because the network weights are random, the values obtained at the output of the neurons are also random. The main operation in PBP is the approximation of the distribution of these random values with a Gaussian by moment matching. These operations are performed in a forward pass and the resulting Gaussian approximation to the output of the network is then used to estimate the logarithm of the marginal likelihood. The gradients of this quantity are then used to update the parameters of the Gaussian distributions on the network weights.
+A graphical representation of the probabilistic back propagation (PBP)
+algorithm. Deterministic inputs are represented as $1$'s and $0$'s at the input
+layer. These are passed forward through the Bayesian neural network and because
+the network weights are random, the values obtained at the output of the
+neurons are also random. The main operation in PBP is the approximation of the
+distribution of these random values with a Gaussian by moment matching. These
+operations are performed in a forward pass. The resulting Gaussian
+approximation to the output of the network is then used to estimate the
+logarithm of the marginal likelihood. The gradients of this quantity are then
+used to update the parameters of the Gaussian distributions on the network
+weights.
