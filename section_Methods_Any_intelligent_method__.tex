@@ -1,18 +1,27 @@
 \section{Methods}
 
-Adaptive design tools include three main components. First, a probabilistic
-model that describes the fitness values obtained by performing experiments.
-Second, an inference algorithm that combines the probabilistic model with the
-collected data to make predictions on new data points 
+Adaptive design tools include three main components. First, a
+\emph{probabilistic model} that describes the fitness values obtained by
+performing experiments. Second, an \emph{inference algorithm} that combines the
+probabilistic model with the data collected so far to make predictions on new
+data and finally, a \emph{data collection strategy} that is used to make
+intelligent decisions about what experiments to perform next. We choose our
+probabilistic models to be Bayesian neural networks, which are highly scalable
+and often make very accurate predictions with large amounts of data. For
+inference we use the algorithm probabilistic back-propagation, which is a very
+recent technique that has low computational cost and produces accurate
+estimates of uncertainty in the predictions of neural networks.
+In the following sections we describe these individual components.
 
-extrapolate the fitness values of a reduced set of molecules for which data has
-already been collected to a much larger set of molecules. 
+%Random searches have been used for the exploration of chemical spaces \cite{23548177},
+%and include results for a random search as a benchmark for these methods, since
+%for a method to approach `intelligence', it surely must give significant
+%improvements in efficiency over a random (Monte Carlo) approach.
 
-data 
+%Our adaptive design methods balance
+%5exploration of a wide range of molecules (often thought of in terms of
+%diversity maximization
+%\cite{Blaney_1997,Wang_2009,Fitzgerald_2006,reker_activelearning_2015})
+%with explotation of the most promissig molecules.
 
-make prediction
-
-for the efficient i
-
-Any intelligent method of exploring chemical space must balance exploration of a wide range of molecules (often thought of in terms of diversity maximization\cite{Blaney_1997,Wang_2009,Fitzgerald_2006,reker_activelearning_2015}) with exploiting the predictive power of the method used. We note that random searches have been used for the exploration of chemical spaces\cite{23548177}, and include results for a random search as a benchmark for these methods, since for a method to approach `intelligence', it surely must give significant improvements in efficiency over a random (Monte Carlo) regime.
 
