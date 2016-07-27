@@ -1,6 +1,6 @@
 \subsection{Data collection strategies}
 
-When navigating chemical space, there are two main tasks of interest. The first one consists in finding quickly molecules that achieve high values of a particular fitness function. In some cases the goal may be to find just a single optimal molecule, but in many ---especially in high-throughput screening scenarios \cite{pyzer-knapp_what_2015}--- the desired outcome is to find 
+When exploring chemical space, there are two main tasks of interest. The first one consists in finding quickly molecules that achieve high values of a particular fitness function. In some cases the goal may be to find just a single optimal molecule, but in many ---especially in high-throughput screening scenarios \cite{pyzer-knapp_what_2015}--- the desired outcome is to find 
 an enriched set of several molecules that achieve the highest possible fitness values. For solving this type of problems, we propose to use a data collection strategy called Thompson sampling \cite{thompson_likelihood_1933}. This is a simple heuristic that automatically balances exploration and exploitation \cite{Chapelle2011} and that is highly scalable and easy to implement in a distributed setting.
 
 The first one is to find data that will lead to low prediction error as quickly as possible. This is particularly helpful when we need accurate predictions over a wide range of possible inputs. One important case within this category is the prediction of toxcity. 
