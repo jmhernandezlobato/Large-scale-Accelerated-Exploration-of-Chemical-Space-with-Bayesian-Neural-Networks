@@ -7,23 +7,8 @@ They produce state-of-the-art results when predicting chemical properties of mol
 
 Given data~${\mathcal{D} = \{\mathbf{x}_n, y_n \}_{n=1}^N}$, formed by feature vectors~${\mathbf{x}_n \in \mathbb{R}^D}$ and targets~${y_n \in \mathbb{R}}^K$, we assume that~${y_n = f(\mathbf{x}_n;\mathcal{W}) + \epsilon_n}$,
 where~$f(\cdot ;\mathcal{W})$ is the output of a neural net with weights $\mathcal{W}$. The network output is corrupted by additive noise variables~$\epsilon_n \sim \mathcal{N}(0,\gamma^{-1})$. The network has~$L$ layers, with~$V_l$ hidden units in layer~$l$, and~${\mathcal{W} = \{ \mathbf{W}_l \}_{l=1}^L}$ is the collection of~${V_l \times (V_{l-1}+1)}$ weight matrices. The $+1$ is introduced here to account for the additional per-layer biases. The activation functions for the hidden layers are rectifiers: ${\varphi(x) = \max(x,0)}$. Let $\mathbf{y}$ be an $N$-dimensional vector with the targets~$y_n$ and~$\mathbf{X}$ be an ${N\times D}$ matrix of feature vectors~$\mathbf{x}_n$.
-The entries of the weight matrices in $\mathcal{W}$ are \emph{a priori} distributed according to a Gaussian distribution with zero mean and variance equal to $\lamba^{-1}$. The prior distributions for $\gamma$ and $\lambda$ is Gamma with parameters 
+The entries of the weight matrices in $\mathcal{W}$ are \emph{a priori} distributed according to a Gaussian distribution with zero mean and variance equal to $\lamba^{-1}$. The prior distributions for $\gamma$ and $\lambda$ are non-informative Gamma distributions with shape and rate parameters equal to 6.
 
-We specify a Gaussian prior distribution for each entry in each of the weight matrices in $\mathcal{W}$:
-\begin{align}
-p(\mathcal{W}\given\lambda) = 
-\prod_{l=1}^L \prod_{i=1}^{V_l} \prod_{j=1}^{V_{l-1}+1} \mathcal{N}(w_{ij,l}\given0,\lambda^{-1})\,,\label{eq:prior}
-\end{align}
-}where $w_{ij,l}$ is the entry in the~$i$-th row and~$j$-th column of~$\mathbf{W}_l$ and~$\lambda$ is a prior variance.  The posterior distribution for the weights~$\mathcal{W}$ can then be obtained by applying Bayes' rule.
-
-We use a neural network with~$L$ layers, where~$V_l$ is the number of hidden units in layer~$l$, and~${\mathcal{W} = \{ \mathbf{W}_l \}_{l=1}^L}$ is the collection of~${V_l\times (V_{l-1}+1)}$ weight matrices between fully-connected layers. The $+1$ is introduced to account for the additional per-layer biases. We denote the outputs of the layers by vectors~$\{ \mathbf{z}_l \}_{l=0}^{L}$, where~$\mathbf{z}_0$ is the input layer,~${\{\mathbf{z}_l\}_{l=1}^{L-1}}$ are the hidden units and~$\mathbf{z}_L$ denotes the output layer, which is one-dimensional since the target variables $y_n$ are scalars.   
-The input to the $l$-th layer is defined as~${\mathbf{a}_l = \mathbf{W}_l \mathbf{z}_{l-1} / \sqrt{V_{l-1}+1} }$,
-where the factor~${1/\sqrt{V_{l-1} + 1}}$ keeps the scale of the input to each neuron independent
-of the number of incoming connections.
-The activation functions for each hidden layer are rectified linear units (ReLUs)
-\cite{nair2010rectified}, i.e.,~${a(x) = \max(x,0)}$.
-Let $\gamma$ be the precision of the Gaussian noise in the target variables and let $\lambda$
-be the precision of the zero-mean isotropic Gaussian prior on the network weights.
 PBP approximates the posterior distribution on $\mathcal{W}$, $\gamma$ and $\lambda$ with
 the tractable distribution
 \begin{equation}
