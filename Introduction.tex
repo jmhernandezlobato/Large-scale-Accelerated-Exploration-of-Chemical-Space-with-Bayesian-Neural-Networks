@@ -64,12 +64,11 @@ produce very accurate estimates of uncertainty and are therefore
 good at exploration. However, they also have a high computational cost and can only be applied to small datasets. While GPs can be scaled up by resorting to approximations  \cite{snelson2005sparse,hensman2015scalable}, the resulting methods are
 statistically inefficient in the large-data regime because GPs cannot learn
 feature representations for the data \cite{bengio2007scaling}.
-
 Neural networks do not have the previous disadvantages: they are highly scalable and,
 by using adaptive basis functions, they can make very accurate predictions with
 large amounts of data \cite{lecun2015deep}. However, until very recently, it was very
-challenging to obtain accurate estimates of uncertainty in the predictions of very large
-neural networks trained on large datasets. In this work we exploit
+challenging to obtain accurate estimates of uncertainty with large
+neural networks and large amounts of data. In this work we exploit
 recent advances in approximate inference with Bayesian neural networks to overcome this difficulty. 
 In particular, we use the method probabilistic back-propagation \cite{Hernandez-Lobato15b} to obtain fast
 and accurate estimates of uncertainty in the predictions of Bayesian neural networks.
