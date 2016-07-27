@@ -1,0 +1,8 @@
+\subsection{Active learning}
+
+When navigating chemical space, there are two main tasks of interest.  The first one is to find a model with low prediction error as quickly as possible.
+This is particularly helpful when we need accurate predictions over a wide range of possible inputs. One potential case in which that is important is the prediction of toxcity.  Here, the accuracy of a model is important and  also not a classic optimization problem. For this first task we propose to use the maximum entropy sampling heuristic, which can be shown to select the most informative molecules for solving
+the prediction problem.  The second task is a classic optimization challenge --- we want to find molecules that achieve high values for some fitness
+function.  In some cases this may be one molecule, but in many --- especially in high-throughput screening scenarios \cite{pyzer-knapp_what_2015} --- the
+desired outcome is to find the most enriched set of molecules. For this task, we propose to use Thompson sampling \cite{thompson_likelihood_1933}, a simple
+heuristic that achieves a strong balance of exploration and exploitation \cite{Chapelle2011}.
