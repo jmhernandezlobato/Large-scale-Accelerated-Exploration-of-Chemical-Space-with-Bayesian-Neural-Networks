@@ -25,7 +25,9 @@ the new $q$ and the product of the old $q$ and the likelihood factor $\mathcal{N
 \label{eq:adf_update_2}v_{ij,l}^\text{new} = v_{ij,l} - v_{ij,l}^2 \left[ (\nabla_{m_{ij,l}} \log Z)^2 - 2 \nabla_{v_{ij,l}} \log Z \right]\,,
 \end{equation}
 where $Z$ is the result of marginalizing the likelihood $\mathcal{N}(y_n\,|\, f(\mathbf{x}_n;\mathcal{W}),\gamma^{-1})$ with
-respect to $q$. The computation of $Z$ is intractable. However, PBP circumvents this problem by
+respect to $q$. 
+
+In the above expressions, the computation of $Z$ is intractable. PBP circumvents this problem by
 approximating the distribution of the network output $f(\mathbf{x}_n;\mathcal{W})$ when $\mathcal{W} \sim q$ with a Gaussian.
 This is achieved in a forward pass through the network where each non-Gaussian distribution for the output of each neural unit is approximated with a Gaussian by moment matching. When $\gamma\sim q$, the marginalization of $\mathcal{N}(y_n \,|\, f(\mathbf{x}_n;\mathcal{W}),\gamma^{-1})$  with respect to $\gamma$ produces a Student's $t$ density which does not convolve in closed form with respect to the Gaussian approximation on $f(\mathbf{x}_n;\mathcal{W})$. Nevertheless, this Student's $t$ density can be as well approximated with a Gaussian by moment matching to obtain a closed form convolution that approximates $Z$.
 The gradients required in (\ref{eq:adf_update_1}) and (\ref{eq:adf_update_2}) can then be obtained by back-propagation.
