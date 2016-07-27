@@ -18,10 +18,12 @@ whose parameters are tuned by iteratively running an assumed density filtering (
 each time a new data point is processed.
 For this, PBP matches moments between
 the new $q$ and the product of the old $q$ and the likelihood factor $\mathcal{N}(y_n \,|\, f(\mathbf{x}_n;\mathcal{W}),\gamma^{-1})$. The matching of moments for the weights is achieved by using standard ADF Gaussian updates (see \cite{minka2001family}, equations 5.12 and 5.1):
-\begin{eqnarray}
-\label{eq:adf_update_1} m_{ij,l}^\text{new} & = & m_{ij,l} + v_{ij,l} \nabla_{m_{ij,l}} \log Z \,,\\
+\begin{equation}
+\label{eq:adf_update_1} m_{ij,l}^\text{new} & = & m_{ij,l} + v_{ij,l} \nabla_{m_{ij,l}} \log Z \,,
+\end{equation}
+\begin{equation}
 \label{eq:adf_update_2}v_{ij,l}^\text{new} & = & v_{ij,l} - v_{ij,l}^2 \left[ (\nabla_{m_{ij,l}} \log Z)^2 - 2 \nabla_{v_{ij,l}} \log Z \right]\,,
-\end{eqnarray}
+\end{equation}
 where $Z$ is the result of marginalizing the likelihood $\mathcal{N}(y_n\,|\, f(\mathbf{x}_n;\mathcal{W}),\gamma^{-1})$ with
 respect to $q$. The computation of $Z$ is intractable. However, PBP circumvents this problem by
 approximating the distribution of the network output $f(\mathbf{x}_n;\mathcal{W})$ when $\mathcal{W} \sim q$ with a Gaussian.
