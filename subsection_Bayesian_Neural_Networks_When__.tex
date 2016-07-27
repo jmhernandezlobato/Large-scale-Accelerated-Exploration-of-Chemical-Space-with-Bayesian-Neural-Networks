@@ -14,7 +14,7 @@ q(\mathcal{W},\gamma, \lambda) = \left[ \prod_{l=1}^L\! \prod_{i=1}^{V_l}\!
  \text{Gam}(\gamma \,|\, \alpha^\gamma, \beta^\gamma)
 \text{Gam}(\lambda \,|\, \alpha^\lambda, \beta^\lambda)\,.\label{eq:posterior_approximation}
 \end{equation}
-whose parameters are tuned by iteratively running an assumed density filtering (ADF) algorithm over the training data \cite{Opper}. The main operation in PBP is the update of the mean and variance parameters of (\ref{eq:posterior_approximation})
+whose parameters are tuned by iteratively running an assumed density filtering (ADF) algorithm over the training data \cite{Opper1998}. The main operation in PBP is the update of the mean and variance parameters of (\ref{eq:posterior_approximation})
 each time a new data point is processed.
 For this, PBP matches moments between
 the new $q$ and the product of the old $q$ and the likelihood factor $\mathcal{N}(y_n \,|\, f(\mathbf{x}_n;\mathcal{W}),\gamma^{-1})$. The matching of moments for the weights is achieved by using standard ADF Gaussian updates (see \cite{minka2001family}, equations 5.12 and 5.1):
