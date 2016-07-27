@@ -10,7 +10,7 @@ networks focus only on the deterministic prediction scenario. In our case, for s
 desirable to use a probabilistic prediction paradigm. While making probabilistic predictions with neural networks is traditionally a difficult task, we use here a recent breakthrough in scalable training of Bayesian neural networks 
 known as probablistic back propagation (PBP) \cite{hernandez2015probabilistic}. 
 
-In a neural network with~$L$ layers, where~$V_l$ is the number of hidden units in layer~$l$, and~${\mathcal{W} = \{ \mathbf{W}_l \}_{l=1}^L}$ is the collection of~${V_l\times (V_{l-1}+1)}$ weight matrices between fully-connected layers. The $+1$ is introduced to account for the additional per-layer biases. We denote the outputs of the layers by vectors~$\{ \mathbf{z}_l \}_{l=0}^{L}$, where~$\mathbf{z}_0$ is the input layer,~${\{\mathbf{z}_l\}_{l=1}^{L-1}}$ are the hidden units and~$\mathbf{z}_L$ denotes the output layer, which is one-dimensional since the target variables $y_n$ are scalars.  
+We use a neural network with~$L$ layers, where~$V_l$ is the number of hidden units in layer~$l$, and~${\mathcal{W} = \{ \mathbf{W}_l \}_{l=1}^L}$ is the collection of~${V_l\times (V_{l-1}+1)}$ weight matrices between fully-connected layers. The $+1$ is introduced to account for the additional per-layer biases. We denote the outputs of the layers by vectors~$\{ \mathbf{z}_l \}_{l=0}^{L}$, where~$\mathbf{z}_0$ is the input layer,~${\{\mathbf{z}_l\}_{l=1}^{L-1}}$ are the hidden units and~$\mathbf{z}_L$ denotes the output layer, which is one-dimensional since the target variables $y_n$ are scalars.  
 The input to the $l$-th layer is defined as~${\mathbf{a}_l = \mathbf{W}_l \mathbf{z}_{l-1} / \sqrt{V_{l-1}+1} }$,
 where the factor~${1/\sqrt{V_{l-1} + 1}}$ keeps the scale of the input to each neuron independent
 of the number of incoming connections.
@@ -20,12 +20,12 @@ Let $\gamma$ be the precision of the Gaussian noise in the target variables and 
 be the precision of the zero-mean isotropic Gaussian prior on the network weights.
 PBP approximates the posterior distribution on $\mathcal{W}$, $\gamma$ and $\lambda$ with
 the tractable distribution
-\begin{multline}
-q(\mathcal{W},\gamma, \lambda) = \textstyle \left[ \prod_{l=1}^L\! \prod_{i=1}^{V_l}\! 
+\begin{equation}
+q(\mathcal{W},\gamma, \lambda) = \left[ \prod_{l=1}^L\! \prod_{i=1}^{V_l}\! 
 \prod_{j=1}^{V_{l\!-\!1}\!+\!1} \mathcal{N}(w_{ij,l}| m_{ij,l},v_{ij,l})\right ]
-\\ \text{Gam}(\gamma \,|\, \alpha^\gamma, \beta^\gamma)
+ \text{Gam}(\gamma \,|\, \alpha^\gamma, \beta^\gamma)
 \text{Gam}(\lambda \,|\, \alpha^\lambda, \beta^\lambda)\,.\label{eq:posterior_approximation}
-\end{multline}
+\end{equation}
 PBP tunes the parameters of $q$ by iterating an assumed
 density filtering (ADF) algorithm over the training data \cite{opper1998bayesian}. The main operation in PBP
 is the update of the mean and variance parameters of (\ref{eq:posterior_approximation})
