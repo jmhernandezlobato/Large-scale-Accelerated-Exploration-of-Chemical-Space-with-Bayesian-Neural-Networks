@@ -19,13 +19,13 @@ each time a new data point is processed.
 For this, PBP matches moments between
 the new $q$ and the product of the old $q$ and the likelihood factor $\mathcal{N}(y_n \,|\, f(\mathbf{x}_n;\mathcal{W}),\gamma^{-1})$. The matching of moments for the weights is achieved by using standard ADF Gaussian updates (see \cite{minka2001family}, equations 5.12 and 5.1):
 \begin{eqnarray}
-m_{ij,l}^\text{new} & = & m_{ij,l} + v_{ij,l} \nabla_{m_{ij,l}} \log Z \,,\label{eq:adf_update_1}\\
-v_{ij,l}^\text{new} & = & v_{ij,l} - v_{ij,l}^2 \left[ (\nabla_{m_{ij,l}} \log Z)^2 - 2 \nabla_{v_{ij,l}} \log Z \right]\,,\label{eq:adf_update_2}
+\label{eq:adf_update_1} m_{ij,l}^\text{new} & = & m_{ij,l} + v_{ij,l} \nabla_{m_{ij,l}} \log Z \,,\\
+\label{eq:adf_update_2}v_{ij,l}^\text{new} & = & v_{ij,l} - v_{ij,l}^2 \left[ (\nabla_{m_{ij,l}} \log Z)^2 - 2 \nabla_{v_{ij,l}} \log Z \right]\,,
 \end{eqnarray}
-where $Z$ is the result of marginalizing the likelihood $\mathcal{N}(y_n\given f(\mathbf{x}_n;\mathcal{W}),\gamma^{-1})$ with
+where $Z$ is the result of marginalizing the likelihood $\mathcal{N}(y_n\,|\, f(\mathbf{x}_n;\mathcal{W}),\gamma^{-1})$ with
 respect to $q$. The computation of $Z$ is intractable. However, PBP circumvents this problem by
 approximating the distribution of the network output $f(\mathbf{x}_n;\mathcal{W})$ when $\mathcal{W} \sim q$ with a Gaussian.
-This is achieved in a forward pass through the network where each non-Gaussian distribution for the output of each neural unit is approximated with a Gaussian by moment matching. When $\gamma\sim q$, the marginalization of $\mathcal{N}(y_n\given f(\mathbf{x}_n;\mathcal{W}),\gamma^{-1})$  with respect to $\gamma$ produces a Student's $t$ density which does not convolve in closed form with respect to the Gaussian approximation on $f(\mathbf{x}_n;\mathcal{W})$. Nevertheless, this Student's $t$ density can be as well approximated with a Gaussian by moment matching to obtain a closed form convolution that approximates $Z$.
+This is achieved in a forward pass through the network where each non-Gaussian distribution for the output of each neural unit is approximated with a Gaussian by moment matching. When $\gamma\sim q$, the marginalization of $\mathcal{N}(y_n \,|\, f(\mathbf{x}_n;\mathcal{W}),\gamma^{-1})$  with respect to $\gamma$ produces a Student's $t$ density which does not convolve in closed form with respect to the Gaussian approximation on $f(\mathbf{x}_n;\mathcal{W})$. Nevertheless, this Student's $t$ density can be as well approximated with a Gaussian by moment matching to obtain a closed form convolution that approximates $Z$.
 The gradients required in (\ref{eq:adf_update_1}) and (\ref{eq:adf_update_2}) can then be obtained by back-propagation.
 After several ADF iterations over the data, we can obtain a probabilistic prediction for $f(\mathbf{x}_\star;\mathcal{W})$ given the test input $\mathbf{x}_\star$ by applying the forward pass process described above. We refer the reader to \cite{hernandez2015probabilistic} for full details on PBP; a graphical depiction of the process of training a Bayesian neural network using PBP is shown in Figure \ref{fig:pbp}.
 
