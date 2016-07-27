@@ -1,10 +1,12 @@
 \subsection{Bayesian Neural Networks}
 
-Test
+%When implementing an intelligent search, it is desirable to utilize a predictive method as a fast approximation to either an expensive calculation, or an experimentally observed value.  Additionally, since the goal is the large scale exploration of chemical space, the method must also possess good scaling characteristics.  In this regard, neural networks provide an ideal solution.  
 
-When implementing an intelligent search, it is desirable to utilize a predictive method as a fast approximation to either an expensive calculation, or an experimentally observed value.  Additionally, since the goal is the large scale exploration of chemical space, the method must also possess good scaling characteristics.  In this regard, neural networks provide an ideal solution.  Neural networks are known to produce state-of-the-art results for predicting chemical properties \cite{ma2015deep,unterthiner2015toxicity,ramsundar2015massively}, and they can also be applied to large datasets by using stochastic optimization techniques \cite{bousquet2008tradeoffs}. 
+Neural networks are known to produce state-of-the-art results for predicting chemical properties 
+\cite{Ma_2015,Mayr_2016,ramsundar2015massively} and they can also be applied to large data sets by using 
+stochastic optimization techniques \cite{bousquet2008tradeoffs}.
 
-In order to balance exploration and exploitation, it is desirable to utilize a probablistic prediction paradigm, rather than the more common deterministic prediction.  Making probabilistic predictions with neural networks is traditionally a difficult task; we make use of a recent breakthrough in the scalable training of Bayesian neural networks developed by some of the authors \cite{hernandez2015probabilistic}, known as probablistic back propagation (PBP). 
+To account for exploration, it is desirable to use a probabilistic prediction paradigm. While making probabilistic predictions with neural networks is traditionally a difficult task, we use here a recent breakthrough in scalable training of Bayesian neural networks \cite{hernandez2015probabilistic}, known as probablistic back propagation (PBP). 
 
 In a neural network with~$L$ layers, where~$V_l$ is the number of hidden units in layer~$l$, and~${\mathcal{W} = \{ \mathbf{W}_l \}_{l=1}^L}$ is the collection of~${V_l\times (V_{l-1}+1)}$ weight matrices between fully-connected layers. The $+1$ is introduced to account for the additional per-layer biases. We denote the outputs of the layers by vectors~$\{ \mathbf{z}_l \}_{l=0}^{L}$, where~$\mathbf{z}_0$ is the input layer,~${\{\mathbf{z}_l\}_{l=1}^{L-1}}$ are the hidden units and~$\mathbf{z}_L$ denotes the output layer, which is one-dimensional since the target variables $y_n$ are scalars.  
 The input to the $l$-th layer is defined as~${\mathbf{a}_l = \mathbf{W}_l \mathbf{z}_{l-1} / \sqrt{V_{l-1}+1} }$,
