@@ -11,8 +11,8 @@ PBP approximates the posterior distribution on $\mathcal{W}$, $\gamma$ and $\lam
 \begin{equation}
 q(\mathcal{W},\gamma, \lambda) = \left[ \prod_{l=1}^L\! \prod_{i=1}^{V_l}\! 
 \prod_{j=1}^{V_{l\!-\!1}\!+\!1} \mathcal{N}(w_{ij,l}| m_{ij,l},v_{ij,l})\right ]
- \text{Gam}(\gamma \,|\, \alpha^\gamma, \beta^\gamma)
-\text{Gam}(\lambda \,|\, \alpha^\lambda, \beta^\lambda)\,.\label{eq:posterior_approximation}
+ \text{Gama}(\gamma \,|\, \alpha^\gamma, \beta^\gamma)
+\text{Gama}(\lambda \,|\, \alpha^\lambda, \beta^\lambda)\,.\label{eq:posterior_approximation}
 \end{equation}
 whose parameters are tuned by iteratively running an assumed density filtering (ADF) algorithm over the training data \cite{Opper1998}. The main operation in PBP is the update of the mean and variance parameters of (\ref{eq:posterior_approximation})
 each time a new data point is processed.
