@@ -53,21 +53,18 @@ Figure ? shows the iterative
 feedback loop used by adaptive design techniques.
 
 Several studies have applied adaptive design tools to searching for
-molecules with improved properties \cite{Xue_2016,Negoescu_2011,De_Grave_2008}. However, these
-works are hampered by several limitations. In particular, they
-address only the small-data regime in which measurements are collected for at most one
+molecules with improved properties \cite{Xue_2016,Negoescu_2011,De_Grave_2008}. 
+However, these works only address the small-data regime with measurements collected only for at most one
 thousand molecules. By contrast, current high-throughput studies can collect data for
 millions of molecules \cite{Hachmann_2011}. The reason for these works addressing only
 the small-data setting is that they 
-use Gaussian processes (GPs) \cite{rasmussen2006gaussian} for making predictions. GPs are ML methods that
-produce very accurate estimates of uncertainty in their predictions and are therefore 
-good at exploration during the data collection process.
-However, they also have a high computational cost and can only be applied to small datasets. While GPs can be scaled up by resorting to approximations 
-\cite{snelson2005sparse,hensman2015scalable}, the resulting methods are
-statistically inefficient in the large-data regime. The reason for this is that GPs cannot learn
+use Gaussian processes (GPs) \cite{rasmussen2006gaussian} for making predictions. These are ML methods that
+produce very accurate estimates of uncertainty and are therefore 
+good at exploration. However, they also have a high computational cost and can only be applied to small datasets. While GPs can be scaled up by resorting to approximations  \cite{snelson2005sparse,hensman2015scalable}, the resulting methods are
+statistically inefficient in the large-data regime because GPs cannot learn
 feature representations for the data \cite{bengio2007scaling}.
 
-By contrast, neural networks do not have the previous disadvantages: they are highly scalable and,
+Neural networks do not have the previous disadvantages: they are highly scalable and,
 by using adaptive basis functions, they can make very accurate predictions with
 large amounts of data \cite{lecun2015deep}. However, until very recently, it was very
 challenging to obtain accurate estimates of uncertainty in the predictions of very large
@@ -77,8 +74,7 @@ In particular, we use the method probabilistic back-propagation \cite{Hernandez-
 and accurate estimates of uncertainty in the predictions of Bayesian neural networks.
 
 As described above, the discovery of new relevant compounds can require to collect massive amounts of data. In this case,
-a fully sequential data collection process can be prohibitively slow. A solution is to accelerate the process by using parallelization.
-For example, by running parallel simulations in a computer cluster or by performing simultaneous experiments in a laboratory.
+a fully sequential data collection process can be prohibitively slow. A solution is to accelerate the process by using parallelization. For example, by running parallel simulations in a computer cluster or by performing simultaneous experiments in a laboratory.
 This requires the adaptive design method to produce at each iteration a batch of molecules that will be
 analyzed simultaneously. Ideally, the individual batches of molecules should also be generated in parallel to avoid computational bottlenecks. To achieve this, we generate our batches of molecules using the Thompson sampling heuristic \cite{Thompson_1933},
 which can be easily implemented in a parallel and distributed fashion. This allows us to collect large
