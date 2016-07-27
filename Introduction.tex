@@ -54,11 +54,12 @@ feedback loop used by adaptive design techniques.
 
 Several studies have applied adaptive design tools to searching for
 molecules with improved properties \cite{Xue_2016,Negoescu_2011,De_Grave_2008}. 
-However, these works only address the small-data regime with measurements collected only for at most one
-thousand molecules. By contrast, current high-throughput studies can collect data for
-millions of molecules \cite{Hachmann_2011}. The reason for these works addressing only
-the small-data setting is that they 
-use Gaussian processes (GPs) \cite{rasmussen2006gaussian} for making predictions. These are ML methods that
+However, these works only address the small-data regime, with measurements
+collected only for at most one thousand molecules. By contrast, current high-throughput studies can collect data for
+millions of molecules \cite{Hachmann_2011}. 
+The reason for the previous works focusing only
+on small data sets is that they 
+use Gaussian processes (GPs) \cite{rasmussen2006gaussian} for making predictions. GPs
 produce very accurate estimates of uncertainty and are therefore 
 good at exploration. However, they also have a high computational cost and can only be applied to small datasets. While GPs can be scaled up by resorting to approximations  \cite{snelson2005sparse,hensman2015scalable}, the resulting methods are
 statistically inefficient in the large-data regime because GPs cannot learn
