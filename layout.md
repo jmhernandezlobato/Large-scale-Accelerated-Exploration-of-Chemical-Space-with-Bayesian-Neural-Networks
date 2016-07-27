@@ -1,5 +1,5 @@
 abstract.tex
 Introduction.tex
-section_Methods_Any_intelligent_method__.tex
+section_Methods_Adaptive_design_tools__.tex
 figures/pbp1/pbp1.png
 subsection_Bayesian_Neural_Networks_When__.tex
