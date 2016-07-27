@@ -1,18 +1,5 @@
 \subsection{Bayesian Neural Networks}
 
-\def\i{^{(i)}}
-\def\xopt{\vx_\star}
-\def\xrec{\widetilde\vx}
-\def\X{\calX}
-\def\D{\calD}
-\def\H{\mathrm{H}}
-\newcommand{\x}{\mathbf{x}}
-\newcommand{\EI}{\textrm{EI}}
-\newcommand{\C}{\mathcal{C}}
-\newcommand{\given}{\,|\,}
-\newcommand{\DistGam}{\text{Gam}}
-
-
 %When implementing an intelligent search, it is desirable to utilize a predictive method as a fast approximation to either an expensive calculation, or an experimentally observed value.  Additionally, since the goal is the large scale exploration of chemical space, the method must also possess good scaling characteristics.  In this regard, neural networks provide an ideal solution.  
 
 Neural networks are known to produce state-of-the-art results for predicting chemical properties 
@@ -34,8 +21,8 @@ the tractable distribution
 \begin{multline}
 q(\mathcal{W},\gamma, \lambda) = \textstyle \left[ \prod_{l=1}^L\! \prod_{i=1}^{V_l}\! 
 \prod_{j=1}^{V_{l\!-\!1}\!+\!1} \mathcal{N}(w_{ij,l}| m_{ij,l},v_{ij,l})\right ]
-\\ \DistGam(\gamma\given \alpha^\gamma, \beta^\gamma)
-\DistGam(\lambda\given \alpha^\lambda, \beta^\lambda)\,.\label{eq:posterior_approximation}
+\\ \text{Gam}(\gamma \,|\, \alpha^\gamma, \beta^\gamma)
+\text{Gam}(\lambda \,|\, \alpha^\lambda, \beta^\lambda)\,.\label{eq:posterior_approximation}
 \end{multline}
 PBP tunes the parameters of $q$ by iterating an assumed
 density filtering (ADF) algorithm over the training data \cite{opper1998bayesian}. The main operation in PBP
