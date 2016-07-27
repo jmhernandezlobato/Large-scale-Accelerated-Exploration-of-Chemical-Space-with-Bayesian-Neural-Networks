@@ -10,9 +10,8 @@ networks focus only on the deterministic prediction scenario. In our case, for s
 desirable to use a probabilistic prediction paradigm. While making probabilistic predictions with neural networks is traditionally a difficult task, we use here a recent breakthrough in scalable training of Bayesian neural networks 
 known as probablistic back propagation (PBP) \cite{hernandez2015probabilistic}. 
 
-Given data~${\mathcal{D} = \{\mathbf{x}_n, y_n \}_{n=1}^N}$, formed by feature vectors~${\mathbf{x}_n \in \mathbb{R}^D}$ and targets~${y_n \in \mathbb{R}}^K$, we assume that~${\mathbf{y}_n = f(\mathbf{x}_n;\mathcal{W}) + \bm \epsilon_n}$,
-where~$f(\cdot ;\mathcal{W})$ is the output of a neural net with weights $\mathcal{W}$. The network output is corrupted by additive noise variables~$\bm \epsilon_n \sim \mathcal{N}(0,\bm \Gamma)$ with diagonal covariance matrix $\bm \Gamma$. The network has~$L$ layers, with~$V_l$ hidden units in layer~$l$, and~${\mathcal{W} = \{ \mathbf{W}_l \}_{l=1}^L}$ is the collection of~${V_l
-\times (V_{l-1}+1)}$ weight matrices. The $+1$ is introduced here to account for the additional per-layer biases.
+Given data~${\mathcal{D} = \{\mathbf{x}_n, y_n \}_{n=1}^N}$, formed by feature vectors~${\mathbf{x}_n \in \mathbb{R}^D}$ and targets~${y_n \in \mathbb{R}}^K$, we assume that~${\mathbf{y}_n = f(\mathbf{x}_n;\mathcal{W}) + \boldsymbol{\epsilon}_n}$,
+where~$f(\cdot ;\mathcal{W})$ is the output of a neural net with weights $\mathcal{W}$. The network output is corrupted by additive noise variables~$\boldsymbol{\epsilon}_n \sim \mathcal{N}(0,\boldsymbol{ \Gamma})$ with diagonal covariance matrix $\boldsymbol{ \Gamma}$. The network has~$L$ layers, with~$V_l$ hidden units in layer~$l$, and~${\mathcal{W} = \{ \mathbf{W}_l \}_{l=1}^L}$ is the collection of~${V_l \times (V_{l-1}+1)}$ weight matrices. The $+1$ is introduced here to account for the additional per-layer biases.
 
 The activation functions for the hidden layers are rectifiers:~${\varphi(x) = \max(x,0)}$. Let $\mathbf{Y}$ be an ${N\times K}$ matrix with the targets~$\mathbf{y}_n$ and~$\mathbf{X}$ be an ${N\times D}$ matrix of feature vectors~$\mathbf{x}_n$. The likelihood is then
 
