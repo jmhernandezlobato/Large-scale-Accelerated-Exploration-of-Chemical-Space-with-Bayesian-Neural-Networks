@@ -5,7 +5,7 @@ by the small Gaussian densities in the network edges, the values obtained at the
 neurons are also random. With rectifier non-linearities, the marginal distribution of output values at the hidden units is a mixture
 of a point mass at zero and a Gaussian truncated at zero. 
 The main operation in PBP is the approximation of
-these distributions (shown in black in the plot) with Gaussians densities (shown in red) by moment matching. These
+these distributions (shown in black) with Gaussians densities (shown in red) by moment matching. These
 operations are performed in a forward pass. The resulting Gaussian
 approximation at the output of the network is then used to estimate the
 logarithm of the marginal likelihood. The gradients of this quantity are then
