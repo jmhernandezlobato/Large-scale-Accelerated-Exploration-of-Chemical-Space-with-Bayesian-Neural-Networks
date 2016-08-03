@@ -1,6 +1,7 @@
 \subsubsection{Thompson sampling}
 
-Thompson sampling (TS) \cite{Thompson_1933} is a simple heuristic for efficiently identifying the optimal element in a set. Solving this problem with a small number of fitness evaluations requires to attain an optimal exploration/exploitation trade-off. TS does this automatically, without having to use additional parameters for specifying the trade-off explicitly and that would themselves require optimization. Another advantage of Thompson sampling is that it can collect batches of data with the computations
+Thompson sampling (TS) \cite{Thompson_1933} is a simple heuristic for efficiently identifying the optimal element in a set. Solving this problem with a small number of fitness evaluations requires to attain an optimal exploration/exploitation trade-off. TS does this automatically, without having to use additional parameters for specifying the trade-off explicitly and that would themselves require optimization. Another advantage of Thompson sampling is that it can collect batches of data in parallel. In particular TS can be implemented so that the operations performed for the selection of each element in the batch
+
 
 in parallel. This is 
 particularly important when the library of candidate molecules is very large and contains for example millions of molecules.
