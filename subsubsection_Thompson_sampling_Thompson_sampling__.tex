@@ -8,7 +8,7 @@ in the batch evaluation setting where multiple measurements are collected simult
 \item The network weights are sampled $N$ times from the posterior approximation computed by PBP. This results in $N$ deterministic neural networks with known weight values.
 \item Each of the $N$ deterministic neural networks makes predictions on all the remaining molecules.
 \item For each of the $N$ deterministic neural networks, we select the set of top $N$ molecules with highest predicted scores.
-\item A final set with the $N$ molecules to be evaluated next is selected. For this, we iterate over the $N$ sets with $N$ molecules generated in the previous step and select the next molecule with highest ranking that has not been selected before.
+\item A batch with the $N$ molecules to be evaluated next is selected. For this, we iterate over the $N$ sets with $N$ molecules generated in the previous step and select from each set the molecule with highest ranking in that set that has not been selected before.
 \item Steps 2-5 are repeated
 \end{enumerate}
 By sampling the weight distributions in the Bayesian neural network, we produce a set of deterministic neural networks, the weights of which vary across the set in a manner directly related to the uncertainty of the probabilistic model in their value.  Thus, a balance in the search for extreme molecules is achieved without directly imposing any external measure of molecular diversity - which is in itself an area of intense study \cite{Maldonado_2006}.
