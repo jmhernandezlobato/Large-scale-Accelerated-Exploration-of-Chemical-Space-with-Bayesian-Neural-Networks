@@ -5,7 +5,7 @@ is to select the next data point so that it will on average shrink the most our 
 \begin{equation}
 \text{H}[\mathbf{w}|\mathcal{D}] - 
 \mathbb{E}_{y|\mathbf{x},\mathcal{D}}\text{H}[\mathbf{w}|\mathcal{D}\cup\{\mathbf{x},y\}]\,,\label{eq:acq_func}
-\end{align}
+\end{equation}
 where~$\text{H}[\cdot]$ is the differential entropy, $\mathbf{w}$ are the network weights, $\mathcal{D}$ is the data collected so far and~$y$ is the unknown target associated with $\mathbf{x}$. We can rewrite  by swapping the roles of $y$ and $\mathbf{w}$ %\cite{houlsby2012collaborative}:
 \begin{equation}
 \text{H}[y | \mathbf{x},\mathcal{D}] - 
