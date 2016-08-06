@@ -5,5 +5,5 @@ figures/pbp1/pbp1.png
 subsection_Bayesian_neural_networks_and__.tex
 subsection_Data_collection_strategies_When__.tex
 subsubsection_Thompson_sampling_Thompson_sampling__.tex
-subsubsection_Maximum_entropy_sampling_In__.tex
+subsubsection_Maximum_entropy_sampling_To__.tex
 section_Description_of_the_data__.tex
