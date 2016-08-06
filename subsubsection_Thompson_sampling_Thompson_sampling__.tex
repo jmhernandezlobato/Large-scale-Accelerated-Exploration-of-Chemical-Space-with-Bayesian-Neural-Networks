@@ -5,16 +5,16 @@ in the batch evaluation setting where multiple measurements are collected simult
 \begin{enumerate}
 \item A small number of molecules are selected uniformly at random from the library of candidate molecules and measurements for their ground truth values are obtained.
 \item A Bayesian neural network is trained with PBP on the data collected so far.
-\item The network weights are sampled $N$ times from the posterior approximation computed by PBP. This results in $N$ deterministic neural networks with known weight values. Each of the $N$ deterministic neural networks makes predictions on all the remaining molecules. 
-\item For each of the $N$ deterministic neural networks, we select the set of top $N$ molecules with highest predicted scores. This results in $N$ sets of molecules of size $N$.
+\item The network weights are sampled $N$ times from the posterior approximation computed by PBP. This results in $N$ deterministic neural networks with known weight values. Each of the $N$ deterministic neural networks makes predictions on all the remaining molecules. For each of the $N$ deterministic neural networks, we select the set of top $N$ molecules with highest predicted scores. This results in $N$ sets of molecules of size $N$.
 \item A new batch with the $N$ molecules to be evaluated next is generated. For this, we iterate over the $N$ sets with $N$ molecules obtained in the previous step and select from each set the molecule with highest ranking in that set that has not been selected before.
 \item Data is collected for each of the $N$ molecules in the batch.
-\item Steps 2-6 are repeated
+\item Steps 2-5 are repeated
 \end{enumerate}
 
-By sampling the weight distributions in step 3, TS produces $N$ deterministic neural networks whose predictions attain a balance between exploration and exploitation. Exploration is obtained as a result of the randomness of the sampling process. Exploitation is enforced because each deterministic neural network is a noisy estimate of the Bayes' optimal predictor. 
-Note that step 4 and 5 are a bottleneck when $N$ and the size of the library of candidate molecules are very large.
-These steps can  be easily implemented in a distributed manner by making predictions with each of the $N$ deterministic neural networks on a separate node in a computer cluster.
+By sampling the weight distributions in step 3, TS produces $N$ deterministic neural networks whose predictions attain a balance between exploration and exploitation. Exploitation is enforced because each deterministic neural network is a noisy estimate of the Bayes' optimal predictor. Exploration is obtained as a result of the randomness of the sampling process. 
+Thus, a balance in the search for extreme molecules is achieved without directly imposing any external measure of molecular diversity ---which is in itself an area of intense study \cite{Maldonado_2006}.
+Note that step 4 is a bottleneck when $N$ and the size of the library of candidate molecules are very large.
+This step can be easily implemented in a distributed manner by making predictions with each of the $N$ deterministic neural networks on a separate node in a computer cluster.
 
 
-, we produce a set of deterministic neural networks, the weights of which vary across the set in a manner directly related to the uncertainty of the probabilistic model in their value.  Thus, a balance in the search for extreme molecules is achieved without directly imposing any external measure of molecular diversity - which is in itself an area of intense study \cite{Maldonado_2006}.
+, we produce a set of deterministic neural networks, the weights of which vary across the set in a manner directly related to the uncertainty of the probabilistic model in their value. 
