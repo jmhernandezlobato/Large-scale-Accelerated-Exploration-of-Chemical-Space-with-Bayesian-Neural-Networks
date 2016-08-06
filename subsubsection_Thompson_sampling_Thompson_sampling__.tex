@@ -5,7 +5,7 @@ in the batch evaluation setting where multiple measurements are collected simult
 \begin{enumerate}
 \item A small number of molecules are selected uniformly at random from the library of candidate molecules and their ground truth values are calculated.
 \item A Bayesian neural network is trained with PBP on the data collected so far.
-\item The network weights are sampled $N$ times from the posterior approximation return by PBP. This results in $N$ deterministic neural networks with known weight values.
+\item The network weights are sampled $N$ times from the posterior approximation computed by PBP. This results in $N$ deterministic neural networks with known weight values.
 \item Each of the $N$ deterministic neural networks makes predictions on all the remaining molecules.
 \item For each of the $N$ deterministic neural networks, we select the set of top $N$ molecules with highest predicted scores.
 \item A final set with the $N$ molecules to be evaluated next is selected. For this, we iterate over the $N$ sets with $N$ molecules generated in the previous step and select the next molecule with highest ranking that has not been selected before.
