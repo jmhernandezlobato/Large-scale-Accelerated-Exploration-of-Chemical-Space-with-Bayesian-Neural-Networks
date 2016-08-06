@@ -1,6 +1,6 @@
 \subsubsection{Maximum entropy sampling}
 
-In the paradigm of probabilistic modeling of data, one can reduce prediction error fast by collecting data for the most informative molecules. For this, we follow the information-based approach described in \citea{MacKay_1992}. The goal is to grow the training set by selecting the each next data point to be the one that will on average shrink the most our uncertainty on the optimal value for the network weights. This is equivalent to maximize the expected reduction in posterior entropy that will be produced by adding new data to the training set. Therefore, we choose the next molecule with feature vector $\mathbf{x}$ that maximizes
+To reduce overall prediction error fast, we propose to collect data for the most informative molecules first. For this, we follow the information-based approach described in \cite{MacKay_1992}. The goal is to grow the training set by selecting the each next data point to be the one that will on average shrink the most our uncertainty on the optimal value for the network weights. This is equivalent to maximize the expected reduction in posterior entropy that will be produced by adding new data to the training set. Therefore, we choose the next molecule with feature vector $\mathbf{x}$ that maximizes
 \begin{equation}
 \text{H}[\mathbf{w}|\mathcal{D}] - 
 \mathbb{E}_{y|\mathbf{x},\mathcal{D}}\text{H}[\mathbf{w}|\mathcal{D}\cup\{\mathbf{x},y\}]\,,\label{eq:acquisition_function}
