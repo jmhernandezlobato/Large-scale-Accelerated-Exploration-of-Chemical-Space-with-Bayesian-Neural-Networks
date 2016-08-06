@@ -10,4 +10,6 @@ where $\text{H}[\cdot]$ is the differential entropy, $\mathbf{w}$ are the networ
 \text{H}[y | \mathbf{x},\mathcal{D}] - 
 \mathbb{E}_{\mathbf{W} | \mathcal{D}}\text{H}[y | \mathbf{w}\mathbf{x}]\,.\label{eq:new_acquisition_function}
 \end{equation}
-The last term in~(\ref{eq:new_acquisition_function}) is constant because for fixed weights $\mathbf{w}$ the predictions of the neural network are Gaussian with variance $\sigma^2$ independent of $\mathbf{x}$. For this reason, we select the next $\mathbf{x}$ to be the one that maximizes the entropy of the predictive distribution $p(y| \mathbf{x},\mathcal{D})$. When $p(y| \mathbf{x},\mathcal{D})$ is approimxated with a Gaussian distribution as in PBP, we select the next $\mathbf{x}$ to be the one with highest predictive variance.
+The last term in~(\ref{eq:new_acquisition_function}) is constant because, for fixed $\mathbf{w}$, the predictions of the neural network are Gaussian with variance $\sigma^2$ independent of $\mathbf{x}$. 
+
+For this reason, we select the next $\mathbf{x}$ to be the one that maximizes the entropy of the predictive distribution $p(y| \mathbf{x},\mathcal{D})$. When $p(y| \mathbf{x},\mathcal{D})$ is approimxated with a Gaussian distribution as in PBP, we select the next $\mathbf{x}$ to be the one with highest predictive variance.
