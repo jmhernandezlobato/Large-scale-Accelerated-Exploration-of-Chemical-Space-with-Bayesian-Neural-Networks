@@ -1,6 +1,6 @@
 \subsubsection{Maximum entropy sampling}
 
-To obtain low prediction error as fast as possible, we propose to collect data for the most informative molecules first. For this, we follow the information-based approach described by \cite{MacKay_1992}. The goal is to iteratively add to the training set the data point that will shrink the most our uncertainty on the optimal value for the network weights. This is equivalent to maximize the expected reduction in posterior entropy that will be produced by adding a new data point to the training set. In particular, at each step, we choose to add next to the training set the molecule with feature vector $\mathbf{x}$ that maximizes
+To obtain low prediction error as fast as possible, we propose to collect data for the most informative molecules first. For this, we follow the information-based approach described by \cite{MacKay_1992}. The goal is to iteratively add to the training set the data point that will shrink the most our uncertainty on the network weights value. This is equivalent to maximize the expected reduction in posterior entropy. In particular, at each step, we choose to add next to the training set the molecule with feature vector $\mathbf{x}$ that maximizes
 \begin{equation}
 \text{H}[\mathbf{w}|\mathcal{D}]  - 
 \mathbb{E}_{y|\mathbf{x},\mathcal{D}}\text{H}[\mathbf{w}|\mathcal{D}\cup\{\mathbf{x},y\}]\,,\label{eq:acquisition_function}
