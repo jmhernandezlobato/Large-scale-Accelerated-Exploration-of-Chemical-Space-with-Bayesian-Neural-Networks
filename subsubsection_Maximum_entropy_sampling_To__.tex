@@ -13,4 +13,5 @@ where $\text{H}[\cdot]$ computes the differential entropy of an input distributi
 Note that for fixed $\mathbf{w}$, the predictions of the neural network are Gaussian with variance $\sigma^2$ that is independent of $\mathbf{x}$. This means that the entropy of $p(y| \mathbf{x},\mathbf{w})$ is also independent of $\mathbf{x}$.
 Therefore, the last term in (\ref{eq:new_acquisition_function}) is constant.
 For this reason, we select the next $\mathbf{x}$ to be the one that maximizes the first term in (\ref{eq:new_acquisition_function}), that is,
-the entropy of the predictive distribution $p(y| \mathbf{x},\mathcal{D})$. In PBP, we approximate $p(y| \mathbf{x},\mathcal{D})$ with a Gaussian distribution. Therefore, we select the next $\mathbf{x}$ to be the one with highest predictive variance.
+the entropy of the predictive distribution $p(y| \mathbf{x},\mathcal{D})$. In PBP, we approximate $p(y| \mathbf{x},\mathcal{D})$ with a Gaussian distribution. Therefore, 
+at each step, we add to the training set the molecule with feature vector $\mathbf{x}$ that results in the highest predictive variance.
