@@ -8,8 +8,8 @@ To obtain low prediction error as fast as possible, we propose to collect data f
 where $\text{H}[\cdot]$ computes the differential entropy of an input distribution, $\mathbf{w}$ are the network weights, $\mathcal{D}$ is the data collected so far, $y$ is the unknown target associated with $\mathbf{x}$ and $\mathbf{w}|\mathcal{D}$ and $y|\mathbf{x},\mathcal{D}$ stand for $p(\mathbf{w}|\mathcal{D})$ and $p(y|\mathbf{x},\mathcal{D})$, respectively. We can rewrite (\ref{eq:acquisition_function}) by swapping the roles of $y$ and $\mathbf{w}$ to obtain an equivalent expression \cite{houlsby2012collaborative}:
 \begin{equation}
 \text{H}[y | \mathbf{x},\mathcal{D}] - 
-\mathbb{E}_{\mathbf{W} | \mathcal{D}}\text{H}[y | \mathbf{w}\mathbf{x}]\,.\label{eq:new_acquisition_function}
+\mathbb{E}_{\mathbf{W} | \mathcal{D}}\text{H}[y | \mathbf{w},\mathbf{x}]\,.\label{eq:new_acquisition_function}
 \end{equation}
-Note that for fixed $\mathbf{w}$, the predictions of the neural network are Gaussian with a variance $\sigma^2$ that is independent of $\mathbf{x}$. This means that the entropy of $p(y| \mathbf{x},\mathbf{w},\mathcal{D})$ is independent of $\mathbf{x}$.
+Note that for fixed $\mathbf{w}$, the predictions of the neural network are Gaussian with a variance $\sigma^2$ that is independent of $\mathbf{x}$. This means that the entropy of $p(y| \mathbf{x},\mathbf{w})$ is independent of $\mathbf{x}$.
 Therefore, the last term in (\ref{eq:new_acquisition_function}) is constant.
 For this reason, we select the next $\mathbf{x}$ to be the one that maximizes the entropy of the predictive distribution $p(y| \mathbf{x},\mathcal{D})$. When $p(y| \mathbf{x},\mathcal{D})$ is approimxated with a Gaussian distribution as in PBP, we select the next $\mathbf{x}$ to be the one with highest predictive variance.
