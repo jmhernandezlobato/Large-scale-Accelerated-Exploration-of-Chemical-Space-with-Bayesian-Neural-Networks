@@ -17,5 +17,3 @@ Thus, a balance in the search for optimal molecules is achieved without directly
 Note that step 4 is a bottleneck when $N$ and the size of the library of candidate molecules are very large.
 Nevertheless, this step can be easily implemented in a distributed manner by making predictions with each of
 the $N$ deterministic neural networks on a different node in a computer cluster. Finally, the reason for generating $N$ sets with $N$ molecules in step 4 is to guarantee that we obtain a final batch with $N$ unique molecules, even if the $N$ deterministic networks make exactly the same predictions on the set of candidate molecules.
-
-$1$
