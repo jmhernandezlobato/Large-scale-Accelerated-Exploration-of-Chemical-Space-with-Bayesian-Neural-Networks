@@ -1,6 +1,6 @@
 \subsubsection{Maximum entropy sampling}
 
-In the paradigm of probabalistic sampling, the best way to quickly reduce the error in a model is to collect maximally informative molecules. To actively collect the most informative molecules we follow an information-based approach \cite{Mackay1992}. The goal is to maximize the expected reduction in posterior entropy that is produced by adding data to the training set. This implies choosing the data point~$\mathbf{x}$ that maximizes
+In the paradigm of probabalistic sampling, the best way to quickly reduce the error in a model is to collect maximally informative molecules. To actively collect the most informative molecules we follow an information-based approach \cite{MacKay_1992}. The goal is to maximize the expected reduction in posterior entropy that is produced by adding data to the training set. This implies choosing the data point~$\mathbf{x}$ that maximizes
 \begin{align}
 \text{H}[\mathbf{w}|\mathcal{D}] - 
 \mathbb{E}_{y|\mathbf{x},\mathcal{D}}\text{H}[\mathbf{w}|\mathcal{D}\cup\{\mathbf{x},y\}]\,,\label{eq:acquisition_function}
