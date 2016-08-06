@@ -5,7 +5,7 @@ To obtain low prediction error as fast as possible, we propose to collect data f
 \text{H}[\mathbf{w}|\mathcal{D}]  - 
 \mathbb{E}_{y|\mathbf{x},\mathcal{D}}\text{H}[\mathbf{w}|\mathcal{D}\cup\{\mathbf{x},y\}]\,,\label{eq:acquisition_function}
 \end{equation}
-where $\text{H}[\cdot]$ is the differential entropy, $\mathbf{w}$ are the network weights, $\mathcal{D}$ is the data collected so far, $y$ is the unknown target associated with $\mathbf{x}$ and $\mathbf{w}|\mathcal{D}$ and $y|\mathbf{x},\mathcal{D}$ stand for $p(\mathbf{w}|\mathcal{D})$ and $p(y|\mathbf{x},\mathcal{D}})$, respectively. We can rewrite (\ref{eq:acquisition_function}) by swapping the roles of $y$ and $\mathbf{w}$ \cite{houlsby2012collaborative}:
+where $\text{H}[\cdot]$ is the differential entropy, $\mathbf{w}$ are the network weights, $\mathcal{D}$ is the data collected so far, $y$ is the unknown target associated with $\mathbf{x}$ and $\mathbf{w}|\mathcal{D}$ and $y|\mathbf{x},\mathcal{D}$ stand for $p(\mathbf{w}|\mathcal{D})$ and $p(y|\mathbf{x},\mathcal{D})$, respectively. We can rewrite (\ref{eq:acquisition_function}) by swapping the roles of $y$ and $\mathbf{w}$ \cite{houlsby2012collaborative}:
 \begin{equation}
 \text{H}[y | \mathbf{x},\mathcal{D}] - 
 \mathbb{E}_{\mathbf{W} | \mathcal{D}}\text{H}[y | \mathbf{w}\mathbf{x}]\,.\label{eq:new_acquisition_function}
