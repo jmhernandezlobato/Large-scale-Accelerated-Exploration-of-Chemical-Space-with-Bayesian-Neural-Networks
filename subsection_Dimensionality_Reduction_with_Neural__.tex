@@ -1,4 +1,4 @@
-\subsection{Dimensionality Reduction with Neural Networks - Information Landscapes}
+\subsection{Data set visualization: search landscapes}
 
 When analyzing data sets for qualities such as diversity, it is important to make the distance measure consistent with the predictive model.  For example, if the prediction were made with a Gaussian process, it would be wise to use the distance model built into the kernel to analyze the diversity of the datasets studied.  This becomes somewhat more complex when the predictive method does not have a well defined distance measure built into it, such as a neural network.  Simply analyzing the diversity of the inputs through the use of a Tanimoto distance histogram, for example, is potentially a dangerous path since it does not acknowledge the highly connected nature of the neurons in a neural network.  We instead utilize an alternative measure, in which a neural network itself is used to compress the data into a resonable number of dimensions,~\cite{hinton_reducing_2006} upon which a visual inspection can reveal the diversity of the dataset.
 
