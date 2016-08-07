@@ -8,5 +8,5 @@ subsubsection_Thompson_sampling_Thompson_sampling__.tex
 subsubsection_Maximum_entropy_sampling_To__.tex
 section_Description_of_the_data__.tex
 figures/nnet_decomp/nnet_decomp.png
-subsection_Dimensionality_Reduction_with_Neural__.tex
+subsection_Data_set_visualization_search__.tex
 figures/info_landscape-tile3/info_landscape-tile3.png
