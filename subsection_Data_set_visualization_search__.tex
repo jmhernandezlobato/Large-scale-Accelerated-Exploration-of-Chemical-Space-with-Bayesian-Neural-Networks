@@ -1,6 +1,8 @@
 \subsection{Data set visualization: search landscapes}
 
-In this section we present a 2D visualization of the search space for each of the data sets mentioned above. We refer to the resulting 2D plots as \emph{search landscapes}. These plots are useful to understand the complexity  
+In this section we present, for each of the data sets mentioned above, a 2D visualization of the search space. We refer to the resulting 2D plots as \emph{search landscapes}. These plots are useful to understand the individual characteristics of the search problem in each data set. We use neural networks to find a non-linear 2D projection of the molecules that form each data set \cite{Hinton_2006}.
+
+We instead utilize an alternative measure, in which a neural network itself is used to compress the data into a reasonable number of dimensions,  upon which a visual inspection can reveal the diversity of the data set
 
 When analyzing data sets for qualities such as diversity, it is important to make the distance measure consistent with the predictive model.  For example, if the prediction were made with a Gaussian process, it would be wise to use the distance model built into the kernel to analyze the diversity of the data sets studied.  This becomes somewhat more complex when the predictive method does not have a well defined distance measure built into it, such as a neural network.  Simply analyzing the diversity of the inputs through the use of a Tanimoto distance histogram, for example, is potentially a dangerous path since it does not acknowledge the highly connected nature of the neurons in a neural network.  We instead utilize an alternative measure, in which a neural network itself is used to compress the data into a reasonable number of dimensions, \cite{Hinton_2006} upon which a visual inspection can reveal the diversity of the data set.
 
