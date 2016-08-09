@@ -18,21 +18,18 @@ weights are adjusted by backpropagation so that the reconstruction at the top
 layer is as close as possible to the original data. After
 the backpropagation process, the bottom part of the mirrored funnel architecture, that is, the
 encoder, is used to perform a non-linear projection of the molecules into a 2D
-space. Before the backpropagation process, bidirectional
+space. All the activation functions are given by logistic transformatons. Because of this, the data is projected into the $[0,1]\times[0,1]$ space. Before running the backpropagation process, bidirectional
 connections between pairs of consecutive layers (see the left plot in Figure
 \ref{fig:stacked_rbms}) are sequentially pre-trained in a layer-wise manner as
 generative models for the data \cite{Hinton_2006}. This pre-training step
-produces a sensible initializations of the network weights that are then fine-tuned by backpropagation.
+produces a sensible initialization of the network weights before the fine-tuning by backpropagation.
 
-The 2D projection of the molecules are then used to generate the search
-landscape plots.
+The 2D projection of the molecules are used to generate the search
+landscape plots. In these plots, chemical space is described by the components of the 2D projection,
+which are bound between 0 and 1. This space is split into 25 square areas of size 0.2x0.2. 
+The color of each of these areas is determined by the mean value of the target variables associated with the molecules contained within the area.
 
-The underlying information derived from these network derived components can be
-further investigated through the use of a plot we call an 'information
-landscape'.  In this plot, chemical space (as described by the components,
-which are bound between 0 and 1) is split into areas of size 0.2x0.2 arbitrary
-units. The mean value for the targets contained within each area is calculated,
-and determines the color of that area.  In order to visualize the distribution
+In order to visualize the distribution
 of molecules within this depiction of chemical space, a kernel density estimate
 is used to plot contour lines.  Additionally, the top 100 molecules, ranked
 according to their target value, are plotted as points on the surface.  By
