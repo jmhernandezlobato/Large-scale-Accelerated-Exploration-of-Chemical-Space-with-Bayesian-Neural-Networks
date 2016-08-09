@@ -12,7 +12,7 @@ funneling architecture formed by an encoder and decoder network connected to
 each other, see the plot in the
 right of Figure \ref{fig:stacked_rbms}. The bottom layer has the same dimension as the data, subsequent
 layers reduce the dimension up to two and then, the last group of layers
-increase the dimension back to the one of the original data. 
+increase the dimension back to the original one. 
 The data is propagated forward from the bottom layer to the top one. The network
 weights are adjusted by backpropagation so that the reconstruction at the top
 layer is as close as possible to the original data. After
