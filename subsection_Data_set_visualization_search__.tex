@@ -28,21 +28,21 @@ The 2D projection of the molecules is used to generate the search
 landscape plots. In these plots chemical space is described by the coordinates of the 2D projection,
 which are bounded between 0 and 1. This space is split into 25 square areas of size $0.2 \times 0.2$ whose 
 color is determined by the mean value of the target variables associated with the molecules in the area. We also visualize the empirical distribution of molecules by using a kernel density estimate whose contour lines are depicted in the plots. Additionally, the top 100 molecules, ranked
-according to their target variables, are shown as blue points in the plots.  
+according to their associated target variables, are shown as blue points in the plots.  
 
 By
 analyzing the distribution of the data, alongside the location of extreme
 molecules, it is easy to classify the data into types of information landscape.
-In Figure \ref{fig:info_landscapes}, we can see the information landscapes
-created to describe each of the data sets used within this study.  The Clean
-Energy Project dataset is striking in the strength of the input/property
-relationship --- the majority of the top molecules are concentrated in a
-relatively small area of chemical space.  Additionally, in this dataset, there
+
+In Figure \ref{fig:info_landscapes}, we can see the search landscapes
+for each of the analyzed data sets.  The Clean
+Energy Project data set has a strong input/property
+relationship, with the majority of the top molecules being concentrated in a
+relatively small area of chemical space. Additionally, in this data set, there
 is a clear trend for worsening performance as the Y-axis is ascended.  This is
-not the case for the other two datasets, in which the `good' areas of chemical
-space are more randomly distributed.  It is interesting to observe the One-Dose
-data set, in which there are two clear families of extreme molecules, one
-towards the top of the plot and one towards the bottom left.  This could be
+not the case for the other two data sets, in which the \emph{`good'} areas of chemical
+space are more randomly distributed. Interestingly, in the One-Dose
+data set there are two clear clusters of optimal molecules, one
+towards the top of the plot and one towards the bottom left. This could be
 indicative of two different approaches taken in the literature to approach the
 problem of developing good treatments for this particular type of cancer.
-
