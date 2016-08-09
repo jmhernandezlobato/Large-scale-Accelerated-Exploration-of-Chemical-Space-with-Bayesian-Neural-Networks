@@ -25,8 +25,8 @@ generative models for the data in a layer-wise manner \cite{Hinton_2006}. This p
 produces a sensible initialization of the network weights before the fine-tuning by backpropagation.
 
 The 2D projection of the molecules is used to generate the search
-landscape plots. In these plots chemical space is described by the components of the 2D projection,
-which are bound between 0 and 1. This space is split into 25 square areas of size $0.2 \times 0.2$ whose 
+landscape plots. In these plots chemical space is described by the coordinates of the 2D projection,
+which are bounded between 0 and 1. This space is split into 25 square areas of size $0.2 \times 0.2$ whose 
 color is determined by the mean value of the target variables associated with the molecules in the area. We also visualize the empirical distribution of molecules by using a kernel density estimate whose contour lines are depicted in the plots. Additionally, the top 100 molecules, ranked
 according to their target variables, are shown as blue points in the plots.  
 
