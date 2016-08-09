@@ -10,8 +10,8 @@ auto-encoder neural network to perform a non-linear dimensionality reduction of 
 into a 2D space \cite{Hinton_2006}. The auto-encoder network has a mirrored
 funneling architecture formed by an encoder and decoder network connected to
 each other, see the plot in the
-right of Figure \ref{fig:stacked_rbms}. The bottom layer has the same dimension as the data, subsequent
-layers reduce the dimension up to two and then, the last group of layers
+right of Figure \ref{fig:stacked_rbms}. The bottom layer has the same dimension as the data. Subsequent
+layers reduce the dimension up to two. The last group of layers
 increase the dimension back to the original one. 
 The data is propagated forward from the bottom to the top layer. The network
 weights are adjusted by backpropagation so that the reconstruction at the top
