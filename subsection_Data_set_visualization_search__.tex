@@ -24,15 +24,13 @@ connections between pairs of consecutive layers (see the left plot in Figure
 generative models for the data in a layer-wise manner \cite{Hinton_2006}. This pre-training step
 produces a sensible initialization of the network weights before the fine-tuning by backpropagation.
 
-The 2D projection of the molecules are used to generate the search
-landscape plots. In these plots, chemical space is described by the components of the 2D projection,
-which are bound between 0 and 1. This space is split into 25 square areas of size 0.2x0.2. 
-The color of each of these areas is determined by the mean value of the target variables associated with the molecules contained within the area.
+The 2D projection of the molecules is used to generate the search
+landscape plots. In these plots chemical space is described by the components of the 2D projection,
+which are bound between 0 and 1. This space is split into 25 square areas of size $0.2 \times 0.2$ whose 
+color is determined by the mean value of the target variables associated with the molecules in the area. We also visualize the empirical distribution of molecules by using a kernel density estimate whose contour lines are depicted in the plots. Additionally, the top 100 molecules, ranked
+according to their target variables, are shown as blue points in the plots.  
 
-In order to visualize the distribution
-of molecules within this depiction of chemical space, a kernel density estimate
-is used to plot contour lines.  Additionally, the top 100 molecules, ranked
-according to their target value, are plotted as points on the surface.  By
+By
 analyzing the distribution of the data, alongside the location of extreme
 molecules, it is easy to classify the data into types of information landscape.
 In Figure \ref{fig:info_landscapes}, we can see the information landscapes
