@@ -18,7 +18,7 @@ weights are adjusted by backpropagation so that the reconstruction at the top
 layer is as close as possible to the original data. After
 the backpropagation process, the bottom part of the mirrored funnel architecture, that is, the
 encoder, is used to perform a non-linear projection of the molecules into a 2D
-space. All the activation functions are given by logistic transformatons. Because of this, the data is projected into the $[0,1]\times[0,1]$ space. Before running the backpropagation process, bidirectional
+space. The activation functions are logistic functions. Because of this, the data is projected into the $[0,1]\times[0,1]$ space. Before running the backpropagation process, bidirectional
 connections between pairs of consecutive layers (see the left plot in Figure
 \ref{fig:stacked_rbms}) are sequentially pre-trained in a layer-wise manner as
 generative models for the data \cite{Hinton_2006}. This pre-training step
