@@ -22,7 +22,7 @@ space. Before the backpropagation process, bidirectional
 connections between pairs of consecutive layers (see the left plot in Figure
 \ref{fig:stacked_rbms}) are sequentially pre-trained in a layer-wise manner as
 generative models for the data \cite{Hinton_2006}. This pre-training step
-produces better initializations of the network weights than other approaches.
+produces a sensible initializations of the network weights that are then fine-tuned by backpropagation.
 
 The 2D projection of the molecules are then used to generate the search
 landscape plots.
