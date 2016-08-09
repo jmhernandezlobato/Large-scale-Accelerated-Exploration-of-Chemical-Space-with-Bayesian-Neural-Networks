@@ -16,7 +16,7 @@ increase the dimension back to the original one.
 The data is propagated forward from bottom to top layer. The network
 weights are adjusted by backpropagation so that the reconstruction at the top
 layer is as close as possible to the original data. After
-this process, the bottom part of the mirrored funnel architecture, that is, the
+the backpropagation process, the bottom part of the mirrored funnel architecture, that is, the
 encoder, is used to perform a non-linear projection of the molecules into a 2D
 space. Before performing the backpropagation procedure, bidirectional
 connections between pairs of consecutive layers (see the left plot in Figure
