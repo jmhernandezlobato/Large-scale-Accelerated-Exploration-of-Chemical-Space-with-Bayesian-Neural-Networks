@@ -20,7 +20,7 @@ the backpropagation process, the bottom part of the mirrored funnel architecture
 encoder, is used to perform a non-linear projection of the molecules into a 2D
 space. All the activation functions in the auto-encoder are logistic functions. Because of this, the data is projected into the $[0,1]\times[0,1]$ space. Before running the backpropagation process, bidirectional
 connections between pairs of consecutive layers (see the left plot in Figure
-\ref{fig:stacked_rbms}) are pre-trained as
+\ref{fig:stacked_rbms}) are sequentially pre-trained as
 generative models for the data in a layer-wise manner \cite{Hinton_2006}. This pre-training step
 produces a sensible initialization of the network weights before the fine-tuning by backpropagation.
 
@@ -42,4 +42,4 @@ space are more randomly distributed. Interestingly, in the One-Dose
 data set there are two clear clusters of optimal molecules, one
 towards the top of the plot and one towards the bottom left. This could be
 indicative of two different approaches taken in the literature to approach the
-problem of developing good treatments for this particular type of cancer. In the Malaria data set, the promising areas of chemical space are more uniformly distributed across the middle of the plot.
+problem of developing treatments for cancer. In the Malaria data set, the promising areas of chemical space are more uniformly distributed across the middle of the plot.
