@@ -8,7 +8,7 @@ characteristics of each search problem.
 We use an
 auto-encoder neural network to perform a non-linear dimensionality reduction of the molecule feature vectors
 into a 2D space \cite{Hinton_2006}. The auto-encoder network has a mirrored
-funneling architecture formed by an encoder and a decoder network connected to
+funneling architecture formed by an encoder and decoder network connected to
 each other, see the plot in the
 right of Figure \ref{fig:stacked_rbms}. The bottom layer has the same dimension as the data. Subsequent
 layers reduce the dimension up to two. The last group of layers
@@ -20,7 +20,7 @@ the backpropagation process, the bottom part of the mirrored funnel architecture
 encoder, is used to perform a non-linear projection of the molecules into a 2D
 space. All the activation functions in the auto-encoder are logistic functions. Because of this, the data is projected into the $[0,1]\times[0,1]$ space. Before running the backpropagation process, bidirectional
 connections between pairs of consecutive layers (see the left plot in Figure
-\ref{fig:stacked_rbms}) are sequentially pre-trained as
+\ref{fig:stacked_rbms}) are pre-trained as
 generative models for the data in a layer-wise manner \cite{Hinton_2006}. This pre-training step
 produces a sensible initialization of the network weights before the fine-tuning by backpropagation.
 
