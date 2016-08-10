@@ -11,5 +11,6 @@ figures/nnet_decomp/nnet_decomp.png
 subsection_Data_set_visualization_search__.tex
 figures/info_landscape-tile3/info_landscape-tile3.png
 section_Results_and_discussion__.tex
+subsection_Thompson_Sampling_When_there__.tex
 figures/mes_cep-vert2/mes_cep-vert2.png
 subsection_Maximum_Entropy_Sampling_Due__.tex
