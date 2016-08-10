@@ -15,3 +15,4 @@ figures/thompson_tile3/thompson_tile3.png
 subsection_Thompson_Sampling_When_there__.tex
 figures/mes_cep-vert2/mes_cep-vert2.png
 subsection_Maximum_Entropy_Sampling_Due__.tex
+section_Conclusion_We_describe_a__.tex
