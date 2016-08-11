@@ -13,6 +13,7 @@ figures/info_landscape-tile3/info_landscape-tile3.png
 section_Results_and_discussion__.tex
 figures/thompson_tile3/thompson_tile3.png
 subsection_Thompson_Sampling_We_evaluate__.tex
+subsubsection_Comparison_with_epsilon_greedy__.tex
 figures/mes_cep-vert2/mes_cep-vert2.png
 subsection_Maximum_Entropy_Sampling_For__.tex
 section_Conclusion_We_describe_a__.tex
