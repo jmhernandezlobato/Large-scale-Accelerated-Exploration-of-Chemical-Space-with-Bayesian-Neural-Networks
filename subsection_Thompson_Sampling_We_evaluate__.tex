@@ -1,6 +1,6 @@
 \subsection{Thompson Sampling}
 
-We evaluate the gains produced by Thompson sampling (TS) in a high throughput virtual screening setting. In these experiments, we sequentially sample molecules from a library of candidate molecules given by one of the data sets from Section \ref{sec:data_sets}. After each sampling step, we calculate the 1\% recall, that is, the fraction of the top 1\% of molecules from the original library that are found among the sampled ones. 
+We evaluate the gains produced by Thompson sampling (TS) in experiments simulating a high throughput virtual screening setting. In these experiments, we sequentially sample molecules from a library of candidate molecules given by one of the data sets from Section \ref{sec:data_sets}. After each sampling step, we calculate the 1\% recall, that is, the fraction of the top 1\% of molecules from the original library that are found among the sampled ones. 
 For the CEP data set, we compute the recall for molecules with power conversion efficiency larger than 10\%.
 Each sampling step consists in selecting a batch of molecules among those that have not been sampled so far. In the Malaria and One-dose data sets we use batches of size 200. These data sets contain each one about 20,000 molecules. By contrast, the CEP data set contains 2 million molecules. In this latter case, we use batches of size 1000. 
 
