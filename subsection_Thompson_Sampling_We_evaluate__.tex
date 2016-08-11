@@ -11,20 +11,3 @@ initially discovered by greedy starts to become exhausted. The good results of g
 
 The previous results allow us to consider the savings in computational time produced by adaptive design strategies. In the CEP data set, TS requires more than thirty times less samples than the Monte Carlo search, which is comparable to the exhaustive enumeration that was used to actually collect the CEP data. We estimate that, with adaptive design strategies, about 34,000 CPU years would have been saved in exploring the part of chemical space covered by the CEP data set. Regarding the One-dose and Malaria data sets, both contain around 20,000 molecules. By using TS, we can locate 70\% of the highly active molecules in both sets, by sampling only 600 molecules. This represents a huge reduction in the discovery time for new therapeutic molecules, not to mention savings in the economic costs associated with synthesizing and testing these molecules.
 
-Note that the greedy baseline could be easily modified in the previous experiments to include some amount of exploration. For example, by replacing a small fraction of the molecules in each batch with molecules chosen uniformly at random. This approach is often called $\epsilon$-greedy \cite{watkins1989learning}, where the variable $\epsilon$ indicates the fraction of molecules that are sampled uniformly at random. The disadvantage of the $\epsilon$-greedy approach is that it requires the tuning of $\epsilon$ to the problem of interest. By contrast, TS automatically adjusts the amount of exploration. Compared TS with different versions of $\epsilon$-greedy in the same way as before, using $\epsilon = 0.01, 0.025, 0.05$ and $0.075$. In this case we sub-sampled the CEP data set to include only 4,000 molecules chosen uniformly at random from the original data set. We then collected then data in batches of size 50 across 50 different repetitions of the experiment. The experiments with the One-dose and the Malaria data sets were the same as before. Table \ref{tab:results_epsilong_greedy} shows the average obtained by each across the $3\times 50 = 150$ different experiments. A ranking of 1 indicates that the method obtains the highest recall at all of the 150 experiments, while a ranking of 5 indicates that the method always obtains the worst results.
-
-\begin{table}
-\centering
-\caption{Average rank obtained by each method.}\label{tab:results_epsilon_greedy}
-\begin{tabular}{lr@{$\pm$}l}
-\hline
-\bf{Dataset}& \multicolumn{2}{c}{\bf{Rank}}\\
-\hline
-$\epsilon = 0.01$ & 3.42 & 0.28 \\
-$\epsilon = 0.025$ & 3.02 & 0.25 \\
-$\epsilon = 0.05$ & 2.86 & 0.23 \\
-$\epsilon = 0.075$ & 3.20 & 0.26 \\
-TS & \bf{ 2.51 }&\bf{ 0.20 } \\
-\hline
-\end{tabular}
-\end{table}
