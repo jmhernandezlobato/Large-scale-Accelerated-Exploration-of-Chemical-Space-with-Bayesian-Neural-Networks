@@ -1,6 +1,23 @@
 \subsubsection{Comparison with $\epsilon$-greedy approaches}
 
-We can easily modify the greedy baseline from the previous section to include some amount of exploration. For example, by replacing a small fraction of the molecules in each batch with molecules chosen uniformly at random. This approach is often called $\epsilon$-greedy \cite{watkins1989learning}, where the variable $\epsilon$ indicates the fraction of molecules that are sampled uniformly at random. The disadvantage of the $\epsilon$-greedy approach is that it requires the tuning of $\epsilon$ to the problem of interest. By contrast, TS automatically adjusts the amount of exploration. 
+We can easily modify the greedy baseline from the previous section to include some amount of exploration. For example, by replacing a small fraction of the molecules in each batch with molecules chosen uniformly at random. This approach is often called $\epsilon$-greedy \cite{watkins1989learning}, where the variable $\epsilon$ indicates the fraction of molecules that are sampled uniformly at random. The disadvantage of the $\epsilon$-greedy approach is that it requires the tuning of $\epsilon$ to the problem of interest. By contrast, TS 
+automatically adjusts the amount of exploration. 
+
+\begin{table}
+\label{tab:table2}
+\begin{tabular}
+\hline
+$\epsilon = 0.01$ & 3.42 & 0.28 \\
+$\epsilon = 0.025$ & 3.02 & 0.25 \\
+$\epsilon = 0.05$ & 2.86 & 0.23 \\
+$\epsilon = 0.075$ & 3.20 & 0.26 \\
+TS & \bf{ 2.51 }&\bf{ 0.20 } \\
+\hline
+\end{tabular}
+\caption{Average rank obtained by each method.}
+\end{table}
+
+Table \ref{tab:tabl2} is an example
 
 \begin{table}
 \label{tab:table1}
