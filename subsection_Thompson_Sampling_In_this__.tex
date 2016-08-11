@@ -13,9 +13,11 @@ The previous results allow us to consider the savings in computational time prod
 
 Both the One-Dose and Malaria data sets contain around 20,000 molecules. By using TS, we can locate 70\% of the highly active molecules in both sets, by sampling only 600 molecules. This represents a huge reduction in the discovery time for new therapeutic molecules, not to mention a significant saving in the economic costs associated with synthesizing and testing these molecules.
 
+Note that the greedy baseline could be easily modified to include some amount of exploration. This could be done for example by replacing an $\epsilon$ fraction of the molecules in each batch with molecules chosen uniformly at random. This approach is often called $\epsilon$-greedy.
+
 \begin{table}
 \centering
-\caption{Average ranks.}\label{tab:results_epsilon_greedy}
+\caption{Average rank by each method.}\label{tab:results_epsilon_greedy}
 \begin{tabular}{lr@{$\pm$}l}
 \hline
 \bf{Dataset}& \multicolumn{2}{c}{\bf{Rank}}\\
