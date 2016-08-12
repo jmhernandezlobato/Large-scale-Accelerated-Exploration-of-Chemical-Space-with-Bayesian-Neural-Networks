@@ -16,5 +16,6 @@ For this reason, we select the next $\mathbf{x}$ to be the one that maximizes th
 the entropy of the predictive distribution $p(y| \mathbf{x},\mathcal{D})$. In PBP, we approximate $p(y| \mathbf{x},\mathcal{D})$ with a Gaussian distribution. Therefore, 
 at each step, we add to the training set the molecule with feature vector $\mathbf{x}$ that results in the highest predictive variance.
 
-The previous approach assumes that we are
+The previous approach assumes that we are collecting data for one molecule at a time. However, in practice we may be able to perform multiple experiments simultaneously. For example, by running computations in parallel in a computer cluster. 
+
 Another advantage of TS is that it can be easily used in the batch evaluation setting where multiple measurements are collected simultaneously.
