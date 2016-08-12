@@ -15,3 +15,6 @@ Therefore, the last term in (\ref{eq:new_acquisition_function}) is constant.
 For this reason, we select the next $\mathbf{x}$ to be the one that maximizes the first term in (\ref{eq:new_acquisition_function}), that is,
 the entropy of the predictive distribution $p(y| \mathbf{x},\mathcal{D})$. In PBP, we approximate $p(y| \mathbf{x},\mathcal{D})$ with a Gaussian distribution. Therefore, 
 at each step, we add to the training set the molecule with feature vector $\mathbf{x}$ that results in the highest predictive variance.
+
+The previous approach assumes that we are
+Another advantage of TS is that it can be easily used in the batch evaluation setting where multiple measurements are collected simultaneously.
