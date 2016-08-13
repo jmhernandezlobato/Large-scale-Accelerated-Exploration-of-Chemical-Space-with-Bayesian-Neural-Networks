@@ -4,32 +4,6 @@ We have proposed to use Bayesian neural networks as a workhorse for building ada
 
 We have proposed to use Thompson sampling (TS) as a data collection strategy for quickly finding enriched set of molecules with high fitness values. We have described how to use this method in the batch evaluation setting where multiple measurements are collected simultaneously, as is the case in high-throughput screening settings. We have also indicated how each new batch of molecules can be generated in a distributed way in a computer cluster. This is important to speed up computations when the batch size and the library of molecules to be screened are very large. Our experiments show that TS outperforms other alternative baselines with similar scalability properties such as Monte Carlo, greedy and $\epsilon$-greedy approaches in the task of finding fast the best molecules in a library of candidate compounds.
 
-We have also considered the problem of collecting data that leads to low prediction error fast. For solving this problem we have proposed to search for sets of highly informative molecules. This has been achieved by using the maximum entropy sampling (MES) strategy. Our experiments show that MES produces significant gains with respect to a Monte Carlo approach that just samples molecules uniformly at random.
+We have also considered the problem of collecting data that leads to low prediction error fast. For solving this problem we have proposed to search for sets of highly informative molecules. This has been achieved by using the maximum entropy sampling (MES) strategy. Our experiments show that MES produces significant gains in predictive performance with respect to a Monte Carlo approach that just samples molecules uniformly at random.
 
-Finally, we have introduced the search landscape plots as a way to visualize the complexity of the search problem.
-
-We have addressed two different design problems. The first one
-
-for adaptive design tool to
-
-
-process by sequentially identifying the most useful experiments to be performed
-next. However, existing adaptive design methods have shortcomings that limit
-their applicability to the molecule search problem. First, they lack
-scalability and cannot work with the large amounts of data that are required to
-successfully navigate chemical space. Second, they are unable to learn feature
-representations for the data, which reduces their statistical efficiency. To
-avoid these limitations, we propose an alternative approach based on the
-combination of Bayesian neural networks with probabilistic active learning. Our
-methods are computationally and statistically efficient by leveraging on recent
-advances in approximate Bayesian inference. Thompson
-sampling is used to quickly identify molecules with optimal properties.
-Maximum entropy sampling is used
-to find small sets of molecules with good interpolation and extrapolation properties.
-Our techniques generate enriched libraries of compounds in a fraction
-of the time required by a stochastic (Monte Carlo) search approach and with
-more robustness than a purely greedy search strategy.
-
-We describe a method which utilizes techniques derived from information theory and machine learning to guide an intelligent search of local areas of chemical space, and its application to the discovery of novel photovoltaic materials and therapeutic molecules.  In order to understand the performance of these intelligent searching methods, we also present a novel component reduction algorithm, based upon the use of unsupervised neural networks.  This demonstrates the diversity of the datasets through the eyes of a neural network, and provides a means of analysing diversity through the components which are most strongly expressed through the neural network.  
-
-Our results demonstrate how the underlying uncertainty in predictive values can be exploited through the use of maximum entropy sampling to provide the which optimially balance predictive power against the size of the molecular library. If the search can be formulated as a classic optimization problem, we show how Thompson sampling can be used to quickly and robustly locate extreme molecules by balancing exploration of the underlying information, with exploitation of the predictive model provided by a Bayesian neural network. This resulted in significant increases in the rate of discovery, displaying significant potential for improving the current model of molecular discovery, especially within the virtual realm.
+Finally, we have introduced the search landscape plots as a way to visualize the complexity of the search problem. By inspecting these plots we can determine whether exploitation will be important in the design process, e.g. if the optimal molecules appear clustered around a single mode, or exploration is necessary for improved performance, e.g. if the optimal molecules are more spread out across different modes.
