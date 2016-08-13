@@ -4,7 +4,9 @@ We have proposed to use Bayesian neural networks as a workhorse for building ada
 
 Thompson sampling (TS) has been proposed as a data collection strategy for quickly finding enriched set of molecules with high fitness values. We have described how to use this method in the batch evaluation setting where multiple measurements are collected simultaneously, as is the case in high-throughput screening settings. We have also indicated how each new batch of molecules can be generated in a distributed way in a computer cluster. This is important to speed up computations when the batch size and the library of molecules to be screened are very large. Our experiments show that TS outperforms other alternative baselines with similar scalability properties such as Monte Carlo, greedy and $\epsilon$-greedy approaches in the task of finding fast the best molecules in a library of candidate compounds.
 
-We have also considered the problem of 
+We have also considered the problem of collecting data that leads to low prediction error fast. For solving this problem we have proposed to search for sets of highly informative molecules. This has been achieved by using the maximum entropy sampling (MES) strategy. Our experiments show that MES produces significant gains with respect to a Monte Carlo approach that just samples molecules uniformly at random.
+
+Finally, we have introduced the search landscape plots as a way to visualize the complexity of the search problem.
 
 We have addressed two different design problems. The first one
 
