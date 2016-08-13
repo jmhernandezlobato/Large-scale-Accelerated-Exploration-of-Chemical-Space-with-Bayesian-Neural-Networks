@@ -2,7 +2,9 @@
 
 We have proposed to use Bayesian neural networks as a workhorse for building adaptive design tools to accelerate high-throughput screening experiments. Neural networks can be trained on large amounts of data and, by using adaptive basis functions, they can learn feature representations that improve their statistical efficiency. These are properties that alternative methods for adaptive design, e.g., Gaussian processes, do not have. Working with large Bayesian neural networks and large amounts of data is traditionally challenging because of the lack of tools for accurate and scalable approximate inference. We avoided this problem by leveraging on a recent advance in this area called probabilistic back-propagation.
 
-To quickly find enriched set of molecules with high fitness values, we have proposed to use Thompson sampling as our data collection strategy. We have described how to use this method to collect data
+To quickly find enriched set of molecules with high fitness values, we have proposed to use Thompson sampling as our data collection strategy. We have described how to use this method in the batch evaluation setting where multiple measurements are collected simultaneously. 
+
+Furthermore, the process for generating each new batch of molecules can be implemented in a distributed way across different nodes in a computer cluster. This is important to speed up computations, especially when the batch size is very large and the library of candidate molecules contains millions of elements. 
 
 We have addressed two different design problems. The first one
 
