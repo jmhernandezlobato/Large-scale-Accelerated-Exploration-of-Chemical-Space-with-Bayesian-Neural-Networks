@@ -1,4 +1,4 @@
-\subsection{Thompson Sampling}\label{sec:thompson_sampling}
+\subsection{Thompson sampling}\label{sec:thompson_sampling}
 
 We evaluate the gains produced by Thompson sampling (TS) in experiments simulating a high throughput virtual screening setting. In these experiments, we sequentially sample molecules from libraries of candidate molecules given by the data sets from Section \ref{sec:data_sets}. After each sampling step, we calculate the 1\% recall, that is, the fraction of the top 1\% of molecules from the original library that are found among the sampled ones. For the CEP data set, we compute recall by focusing on molecules with power conversion efficiency larger than 10\%. In all data sets, each sampling step involves selecting a batch of molecules among those that have not been sampled so far. In the Malaria and One-dose data sets we use batches of size 200. These data sets contain each one about 20,000 molecules. By contrast, the CEP data set contains 2 million molecules. In this latter case, we use batches of size 500. In these experiments, we use Bayesian neural networks with one hidden layer containing 100 units.
 
