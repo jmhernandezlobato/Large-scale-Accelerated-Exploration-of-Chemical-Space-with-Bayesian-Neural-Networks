@@ -9,7 +9,7 @@ in the batch evaluation setting where multiple measurements are collected simult
 \item The network weights are sampled $N$ times from the posterior approximation computed by PBP. This results in $N$ deterministic neural networks with known weight values. Each of these networks makes predictions on all the remaining molecules. For each deterministic network, we select the set of $N$ molecules with highest predicted scores. This results in $N$ sets with $N$ molecules each.
 \item A new batch with $N$ molecules is generated. For this, we iterate over the $N$ sets with $N$ molecules obtained in the previous step and select from each set the molecule with highest ranking in that set that has not been selected before.
 \item Data is collected for each of the $N$ molecules in the batch.
-\item Steps 2-5 are repeated
+\item Steps 2-5 are repeated.
 \end{enumerate}
 
 By sampling the network weights in step 3, TS produces $N$ deterministic neural networks whose predictions attain a balance between exploration and exploitation. Exploitation is enforced because each deterministic neural network is an unbiased estimate of Bayes' optimal predictor. Exploration is obtained as a result of the randomness of the sampling process. 
