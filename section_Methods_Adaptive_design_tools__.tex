@@ -6,11 +6,11 @@ performing experiments. Second, an \emph{inference algorithm} that combines the
 probabilistic model with the data collected so far to make predictions on new
 data and finally, a \emph{data collection strategy} that is used to make
 intelligent decisions about what experiments to perform next. We choose our
-probabilistic models to be Bayesian neural networks, which are highly scalable
-and often make very accurate predictions with large amounts of data. For
+probabilistic models to be Bayesian neural networks, which are scalable
+and often make accurate predictions when trained with large amounts of data. For
 inference we use the recent algorithm probabilistic backpropagation, which has low computational cost and produces accurate
 estimates of uncertainty in the predictions of neural networks. Our data collection strategies are Thompsom sampling and maximum entropy sampling, which are highly scalable and easy to parallelize.
-In the following sections we describe all these individual components.
+In the following sections we describe all these individual components in further detail.
 
 %Random searches have been used for the exploration of chemical spaces \cite{23548177},
 %and include results for a random search as a benchmark for these methods, since
