@@ -17,3 +17,4 @@ subsubsection_Comparison_with_epsilon_greedy__.tex
 figures/mes_cep-vert2/mes_cep-vert2.png
 subsection_Maximum_entropy_sampling_We__.tex
 section_Conclusion_We_have_proposed__.tex
+section_Acknowledgements_A_A_G__.tex
