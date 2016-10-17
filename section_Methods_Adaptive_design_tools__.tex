@@ -1,16 +1,6 @@
 \section{Methods}
 
-Adaptive design tools include three main components. First, a
-\emph{probabilistic model} that describes the fitness values obtained by
-performing experiments. Second, an \emph{inference algorithm} that combines the
-probabilistic model with the data collected so far to make predictions on new
-data and finally, a \emph{data collection strategy} that is used to make
-intelligent decisions about what experiments to perform next. We choose our
-probabilistic models to be Bayesian neural networks, which are scalable
-and often make accurate predictions when trained with large amounts of data. For
-inference we use the recent algorithm probabilistic backpropagation, which has low computational cost and produces accurate
-estimates of uncertainty in the predictions of neural networks. Our data collection strategies are Thompsom sampling and maximum entropy sampling, which are highly scalable and easy to parallelize.
-In the following sections we describe all these individual components in further detail.
+Adaptive design tools include three main components. First, a \emph{probabilistic model} describes the surface of fitness values potentially obtained through simulations or experiments. Second, an \emph{inference algorithm} combines the probabilistic model with the data collected so far to make predictions on new data.  Finally, a \emph{data collection strategy} makes intelligent decisions about what experiments to perform next given the model and the data. We choose our probabilistic models to be Bayesian neural networks, which are scalable and often make accurate predictions when trained on large amounts of data. For inference we use the recently-proposed probabilistic backpropagation algorithm, which has low computational cost and can produce accurate estimates of predictive uncertainty from neural networks. Our data collection strategies are Thompsom sampling and maximum entropy sampling, which are highly scalable and easy to parallelize. In the following sections we describe all these individual components in further detail.
 
 %Random searches have been used for the exploration of chemical spaces \cite{23548177},
 %and include results for a random search as a benchmark for these methods, since
