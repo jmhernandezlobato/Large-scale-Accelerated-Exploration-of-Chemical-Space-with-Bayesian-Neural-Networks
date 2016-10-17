@@ -1,21 +1,3 @@
 
-Chemical space is so large as to make brute force searching for molecules with
-improved properties infeasible. Adaptive design can accelerate the discovery
-process by sequentially identifying the most useful experiments to be performed
-next. However, existing adaptive design methods have shortcomings that limit
-their applicability to the molecule search problem. First, they lack
-scalability and cannot work with the large amounts of data that are required to
-successfully navigate chemical space. Second, they are unable to learn feature
-representations for the data, which reduces their statistical efficiency. To
-avoid these limitations, we propose an alternative approach based on the
-combination of Bayesian neural networks with probabilistic active learning. Our
-methods are computationally and statistically efficient by leveraging on recent
-advances in approximate Bayesian inference. Thompson
-sampling is used to quickly identify molecules with optimal properties.
-Maximum entropy sampling is used
-to find small sets of molecules with good interpolation and extrapolation properties.
-Our methods can be implemented in a parallel and distributed way. This enables us to use
-massive libraries of candidate molecules and very large batch sizes.
-Our techniques generate enriched libraries of compounds in a fraction
-of the time required by a stochastic (Monte Carlo) search approach and with
-more robustness than a purely greedy search strategy.
+With modern large-scale simulation and experimental capabilities, it is desirable to take a rational and direct approach to the design of molecules with particular properties.  Unfortunately, chemical space is so large that, even with recent advances in screening, brute force searches are infeasible. Adaptive design can accelerate discovery by sequentially identifying the most useful simulations and experiments to be performed as part of the screening process. However, existing adaptive design methods have shortcomings that limit their applicability to the molecule search problem. First, they lack scalability and cannot work with the large amounts of data that are required to successfully navigate chemical space. Second, they are unable to learn feature representations for the data, which reduces their ability to generalize and search efficiently.  To avoid these limitations, we propose an alternative approach based on the combination of Bayesian neural networks with probabilistic active learning. Our
+methods are computationally and statistically efficient, leveraging recent advances in approximate Bayesian inference. Thompson sampling is used to quickly identify molecules with optimal properties. Maximum entropy sampling is used to find small sets of molecules with good interpolation and extrapolation properties. Our methods can be implemented in a parallel and distributed way. This enables the use of massive libraries of candidate molecules and very large batch sizes. Our techniques generate enriched libraries of compounds in a fraction of the time required by stochastic (Monte Carlo) search approaches and with more robustness than a purely greedy search strategy.
