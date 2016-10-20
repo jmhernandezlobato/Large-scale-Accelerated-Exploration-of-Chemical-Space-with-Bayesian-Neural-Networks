@@ -1,12 +1,12 @@
 \subsection{Data set visualization: search landscapes}
 
-In this section we present a 2D visualization of the search space for each of
+In this section we present a two-dimensional visualization of the search space for each of
 the previous data sets. We refer to the resulting plots as \emph{search
 landscapes}. These plots are useful to visually understand the individual
 characteristics of each search problem. 
 
 We use an
-auto-encoder neural network to perform a non-linear dimensionality reduction of the molecule feature vectors
+auto-encoder neural network to perform a nonlinear dimensionality reduction of the molecule feature vectors
 into a 2D space \cite{Hinton_2006}. The auto-encoder network has a mirrored
 funneling architecture formed by an encoder and a decoder network connected to
 each other, see the plot in the
@@ -26,19 +26,19 @@ produces a sensible initialization of the network weights before the fine-tuning
 
 The 2D projection of the molecules is used to generate the search
 landscape plots. In these plots chemical space is described by the coordinates of the 2D projection,
-which are bounded between 0 and 1. This space is split into 25 square areas of size $0.2 \times 0.2$ whose 
+which are each bounded between 0 and 1. This space is split into 25 square areas of size ${0.2 \times 0.2}$ whose 
 color is determined by the mean value of the target variables associated with the molecules in the area. We also visualize the empirical distribution of molecules by using a kernel density estimate whose contour lines are depicted in the plots. Additionally, the top 100 molecules, ranked
 according to their associated target variables, are shown as blue points in the plots.  
 
 In Figure \ref{fig:info_landscapes}, we can see the search landscapes obtained
-for each of the analyzed data sets. Note that in the CEP data set we are interested in molecules with high target values while in the One-Dose and Malaria data sets we are interested in molecules with low target values.
+for each of the analyzed data sets. Note that for CEP we are interested in molecules with high target values while for the One-Dose and Malaria data we are interested in molecules with low target values.
 The Clean Energy Project data set has a strong input/property
 relationship, with the majority of the top molecules being concentrated in a
 relatively small area of chemical space corresponding to the bottom middle of the plot. 
-Additionally, in this data set, there
+Additionally, in these data, there
 is a clear trend for worsening performance as the Y-axis is ascended.  This is
 not the case for the other two data sets, in which the \emph{`good'} areas of chemical
 space are more randomly distributed. Interestingly, in the One-Dose
-data set there are two clear clusters of optimal molecules, one
+data there are two clear clusters of optimal molecules, one
 towards the top of the plot and one towards the bottom left. This could be
-indicative of two different approaches taken in the literature to develop treatments for this particular type of cancer. In the Malaria data set, the promising areas of chemical space are more uniformly distributed across the middle of the plot, with a clear discontinuity in the central square area.
+indicative of two different approaches taken in the literature to develop treatments for this particular type of cancer. In the Malaria data, the promising areas of chemical space are more uniformly distributed across the middle of the plot, with a clear discontinuity in the central square area.
